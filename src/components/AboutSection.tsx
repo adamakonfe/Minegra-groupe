@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Phone } from "lucide-react";
 import ceoPortrait from "@/assets/ceo-portrait.jpg";
 
@@ -60,9 +61,9 @@ const AboutSection = () => {
                   (00226) 70 20 64 87
                 </a>
               </div>
-              <a href="#about" className="btn-primary">
+              <Link to="/nous" className="btn-primary">
                 Voir plus
-              </a>
+              </Link>
             </div>
           </div>
         </div>

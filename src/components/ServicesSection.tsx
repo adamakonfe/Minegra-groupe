@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import service1 from "@/assets/service-1.jpeg";
 import service2 from "@/assets/service-2.jpeg";
@@ -9,28 +10,28 @@ const services = [
     title: "GRADE CONTROL",
     description: "Productize inexpensive business vista cooperative benefits globally maintain leading edge schemas.",
     image: service2,
-    href: "#",
+    href: "/services",
   },
   {
     id: 2,
     title: "DRILL AND BLAST",
     description: "Productize inexpensive business vista cooperative benefits globally maintain leading edge schemas.",
     image: service3,
-    href: "#",
+    href: "/services",
   },
   {
     id: 3,
     title: "REVERSE CIRCULATION",
     description: "Productize inexpensive business vista cooperative benefits globally maintain leading edge schemas.",
     image: service2,
-    href: "#",
+    href: "/services",
   },
   {
     id: 4,
     title: "DIAMOND DRILLING",
     description: "Productize inexpensive business vista cooperative benefits globally maintain leading edge schemas.",
     image: service1,
-    href: "#",
+    href: "/services",
   },
 ];
 
@@ -61,21 +62,21 @@ const ServicesSection = () => {
               />
               <div className="service-card-overlay" />
               <div className="service-card-content">
-                <h3 className="font-heading font-bold text-xl mb-3 text-secondary-foreground">
-                  <a href={service.href} className="hover:text-primary transition-colors">
+                <h3 className="font-heading font-bold text-xl mb-3">
+                  <Link to={service.href} className="hover:text-primary transition-colors">
                     {service.title}
-                  </a>
+                  </Link>
                 </h3>
-                <p className="text-sm text-secondary-foreground/80 mb-4 line-clamp-2">
+                <p className="text-sm opacity-80 mb-4 line-clamp-2">
                   {service.description}
                 </p>
-                <a
-                  href={service.href}
+                <Link
+                  to={service.href}
                   className="inline-flex items-center gap-2 text-primary text-sm font-semibold uppercase tracking-wider hover:gap-3 transition-all"
                 >
                   Voir plus
                   <ArrowRight className="w-4 h-4" />
-                </a>
+                </Link>
               </div>
             </div>
           ))}
