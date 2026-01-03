@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin } from "lucide-react";
 import africaLogo from "@/assets/africa-logo.png";
 
@@ -8,7 +9,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Logo & About */}
           <div>
-            <a href="#" className="flex items-center gap-3 mb-6">
+            <Link to="/" className="flex items-center gap-3 mb-6">
               <img src={africaLogo} alt="WAU Drilling" className="h-12 w-auto" />
               <div>
                 <span className="text-primary font-heading font-bold text-sm leading-tight block">
@@ -16,7 +17,7 @@ const Footer = () => {
                 </span>
                 <span className="text-primary font-heading text-xs">Drilling sarl</span>
               </div>
-            </a>
+            </Link>
             <p className="text-secondary-foreground/70 text-sm leading-relaxed">
               Votre partenaire de confiance pour tous vos projets de forage minier en Afrique de l'Ouest.
             </p>
@@ -57,18 +58,22 @@ const Footer = () => {
               Liens Rapides
             </h4>
             <ul className="space-y-3">
-              {["Accueil", "A propos", "Nos services", "Notre équipe", "Équipements"].map(
-                (link) => (
-                  <li key={link}>
-                    <a
-                      href="#"
-                      className="text-sm text-secondary-foreground/70 hover:text-primary hover:pl-2 transition-all"
-                    >
-                      {link}
-                    </a>
-                  </li>
-                )
-              )}
+              {[
+                { label: "Accueil", href: "/" },
+                { label: "A propos", href: "/nous" },
+                { label: "Nos services", href: "/services" },
+                { label: "Notre équipe", href: "/equipe" },
+                { label: "Équipements", href: "/equipements" },
+              ].map((link) => (
+                <li key={link.label}>
+                  <Link
+                    to={link.href}
+                    className="text-sm text-secondary-foreground/70 hover:text-primary hover:pl-2 transition-all"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -86,12 +91,12 @@ const Footer = () => {
                 "Diamond Drilling",
               ].map((service) => (
                 <li key={service}>
-                  <a
-                    href="#"
+                  <Link
+                    to="/services"
                     className="text-sm text-secondary-foreground/70 hover:text-primary hover:pl-2 transition-all"
                   >
                     {service}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -108,7 +113,9 @@ const Footer = () => {
             </p>
             <div className="flex items-center gap-4">
               <a
-                href="#"
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-8 h-8 rounded-full bg-wau-gray hover:bg-primary transition-colors flex items-center justify-center"
               >
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -116,7 +123,9 @@ const Footer = () => {
                 </svg>
               </a>
               <a
-                href="#"
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-8 h-8 rounded-full bg-wau-gray hover:bg-primary transition-colors flex items-center justify-center"
               >
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -124,7 +133,9 @@ const Footer = () => {
                 </svg>
               </a>
               <a
-                href="#"
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-8 h-8 rounded-full bg-wau-gray hover:bg-primary transition-colors flex items-center justify-center"
               >
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">

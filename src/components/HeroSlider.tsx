@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
 import heroTruck from "@/assets/hero-truck.jpg";
 
@@ -19,6 +19,8 @@ const slides = [
     image: heroTruck,
   },
 ];
+
+import { useState, useEffect } from "react";
 
 const HeroSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -60,7 +62,7 @@ const HeroSlider = () => {
 
       {/* Content */}
       <div className="absolute inset-0 z-20 flex items-center justify-center">
-        <div className="text-center text-secondary-foreground">
+        <div className="text-center">
           {slides.map((slide, index) => (
             <div
               key={slide.id}
@@ -74,19 +76,19 @@ const HeroSlider = () => {
                 <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-shadow">
                   <span className="text-primary">{slide.title[0]}</span>
                   <br />
-                  <span className="text-secondary-foreground">{slide.title[1]}</span>
+                  <span style={{ color: 'white' }}>{slide.title[1]}</span>
                 </h1>
               )}
             </div>
           ))}
           
           <div className="flex justify-center gap-4 mt-8">
-            <a href="#about" className="btn-primary">
+            <Link to="/nous" className="btn-primary">
               Voir plus
-            </a>
-            <a href="#contact" className="btn-outline">
+            </Link>
+            <Link to="/contacts" className="btn-outline">
               Nous contacter
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -99,9 +101,13 @@ const HeroSlider = () => {
             onClick={() => setCurrentSlide(index)}
             className={`w-3 h-3 rounded-full border-2 transition-all ${
               index === currentSlide
-                ? "bg-secondary-foreground border-secondary-foreground scale-125"
-                : "border-secondary-foreground/50 hover:border-secondary-foreground"
+                ? "scale-125"
+                : "opacity-50 hover:opacity-100"
             }`}
+            style={{ 
+              backgroundColor: index === currentSlide ? 'white' : 'transparent',
+              borderColor: 'white'
+            }}
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}
@@ -110,7 +116,8 @@ const HeroSlider = () => {
       {/* Scroll Down Button */}
       <button
         onClick={scrollToAbout}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 w-12 h-12 border-2 border-secondary-foreground/50 rounded-full flex items-center justify-center text-secondary-foreground hover:border-primary hover:text-primary transition-colors animate-pulse-slow"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 w-12 h-12 border-2 rounded-full flex items-center justify-center transition-colors animate-pulse-slow"
+        style={{ borderColor: 'rgba(255,255,255,0.5)', color: 'white' }}
         aria-label="Scroll down"
       >
         <ChevronDown className="w-6 h-6" />
