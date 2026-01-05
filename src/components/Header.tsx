@@ -4,12 +4,9 @@ import { Menu, X, ChevronDown, Search } from "lucide-react";
 import minegraLogo from "@/assets/minegra-logo.jpg";
 
 const navItems = [
-  { label: "FORAGE", href: "/forage", hasDropdown: true },
-  { label: "MINE", href: "/mine", hasDropdown: true },
-  { label: "CARRIÈRE", href: "/carriere", hasDropdown: true },
-  { label: "LOGISTIQUE", href: "/logistique", hasDropdown: true },
-  { label: "ENERGIE", href: "/energie", hasDropdown: true },
-  { label: "CONSEILS", href: "/conseils", hasDropdown: true },
+  { label: "MINING SERVICE", href: "/mining-service", hasDropdown: true },
+  { label: "LOGISTICS SOLUTIONS", href: "/logistics-solutions", hasDropdown: true },
+  { label: "ENERGY SUPPLY & SERVICES", href: "/energy-services", hasDropdown: true },
 ];
 
 const Header = () => {
@@ -27,8 +24,8 @@ const Header = () => {
               <h1 className="text-[#1e3a5f] font-heading font-bold text-3xl lg:text-4xl tracking-wide">
                 MINEGRA GROUP
               </h1>
-              <p className="text-[#b8860b] font-heading text-sm lg:text-base tracking-widest mt-1">
-                FORAGE - MINE - CARRIÈRE - LOGISTIQUE - ENERGIE - CONSEILS
+              <p className="text-primary font-heading text-sm lg:text-base tracking-widest mt-1">
+                MINING SERVICE - LOGISTICS SOLUTIONS - ENERGY SUPPLY & SERVICES
               </p>
             </div>
           </Link>
