@@ -4,12 +4,12 @@ import { Menu, X, ChevronDown, Search } from "lucide-react";
 import minegraLogo from "@/assets/minegra-logo.jpg";
 
 const navItems = [
-  { label: "ACCUEIL", href: "/", hasDropdown: true },
-  { label: "A PROPOS", href: "/nous", hasDropdown: true },
-  { label: "DRILLING", href: "/services", hasDropdown: true },
-  { label: "MINING", href: "/services", hasDropdown: true },
-  { label: "NOTRE ÉQUIPE", href: "/equipe", hasDropdown: true },
-  { label: "NOS ÉQUIPEMENTS", href: "/equipements", hasDropdown: true },
+  { label: "FORAGE", href: "/services", hasDropdown: true },
+  { label: "MINE", href: "/services", hasDropdown: true },
+  { label: "CARRIÈRE", href: "/services", hasDropdown: true },
+  { label: "LOGISTIQUE", href: "/equipements", hasDropdown: true },
+  { label: "ENERGIE", href: "/services", hasDropdown: true },
+  { label: "CONSEILS", href: "/nous", hasDropdown: true },
 ];
 
 const Header = () => {
