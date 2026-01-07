@@ -24,9 +24,6 @@ const Header = () => {
               <h1 className="text-[#1e3a5f] font-heading font-bold text-3xl lg:text-4xl tracking-wide">
                 MINEGRA GROUP
               </h1>
-              <p className="text-primary font-heading text-sm lg:text-base tracking-widest mt-1">
-                MINING SERVICE - LOGISTICS SOLUTIONS - ENERGY SUPPLY & SERVICES
-              </p>
             </div>
           </Link>
           
