@@ -85,7 +85,7 @@
   }
 
   .section-title {
-    @apply text-3xl md:text-4xl lg:text-5xl font-bold;
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold leading-tight;
   }
 
   .section-subtitle {
@@ -93,15 +93,16 @@
   }
 
   .btn-primary {
-    @apply bg-primary text-primary-foreground px-8 py-3 font-semibold uppercase tracking-wider transition-all duration-300;
+    @apply bg-primary text-primary-foreground px-8 py-4 font-semibold uppercase tracking-wider transition-all duration-300 inline-block;
   }
 
   .btn-primary:hover {
-    opacity: 0.9;
+    @apply scale-105 shadow-lg;
+    background-color: hsl(45 100% 45%);
   }
 
   .btn-outline {
-    @apply border-2 px-8 py-3 font-semibold uppercase tracking-wider transition-all duration-300;
+    @apply border-2 px-8 py-4 font-semibold uppercase tracking-wider transition-all duration-300 inline-block;
     border-color: white;
     color: white;
   }
@@ -109,14 +110,28 @@
   .btn-outline:hover {
     background-color: white;
     color: hsl(var(--secondary));
+    transform: scale(1.05);
   }
 
   .top-bar-item {
-    @apply flex items-center gap-3 text-sm;
+    @apply flex items-center gap-3 text-sm transition-all duration-300;
+  }
+
+  .top-bar-item:hover {
+    @apply text-primary;
   }
 
   .nav-link {
-    @apply text-foreground transition-colors duration-300 font-medium uppercase text-sm tracking-wide flex items-center gap-1;
+    @apply text-foreground transition-all duration-300 font-medium uppercase text-sm tracking-wide flex items-center gap-1 relative;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
   }
 
   .nav-link:hover {
@@ -128,17 +143,24 @@
   }
 
   .service-card-overlay {
-    @apply absolute inset-0 transition-opacity duration-300;
-    background: linear-gradient(to top, rgba(26,26,26,0.9) 0%, rgba(26,26,26,0.5) 50%, transparent 100%);
-    opacity: 0.8;
+    @apply absolute inset-0 transition-all duration-500;
+    background: linear-gradient(to top, rgba(26,26,26,0.95) 0%, rgba(26,26,26,0.6) 40%, transparent 100%);
   }
 
   .service-card:hover .service-card-overlay {
-    opacity: 1;
+    background: linear-gradient(to top, rgba(26,26,26,0.98) 0%, rgba(26,26,26,0.7) 50%, rgba(0,0,0,0.3) 100%);
+  }
+
+  .service-card img {
+    @apply transition-transform duration-700 ease-out;
+  }
+
+  .service-card:hover img {
+    @apply scale-110;
   }
 
   .service-card-content {
-    @apply absolute bottom-0 left-0 right-0 p-6 transform translate-y-4 transition-transform duration-300;
+    @apply absolute bottom-0 left-0 right-0 p-6 transform translate-y-2 transition-all duration-500 ease-out;
     color: white;
   }
 
@@ -147,11 +169,37 @@
   }
 
   .gold-line {
-    @apply w-16 h-1 bg-primary;
+    @apply w-16 h-1 bg-primary transition-all duration-300;
+  }
+
+  .gold-line-animated:hover {
+    @apply w-24;
   }
 
   .hero-slide {
-    @apply absolute inset-0 transition-opacity duration-1000;
+    @apply absolute inset-0 transition-opacity duration-1000 ease-in-out;
+  }
+
+  /* Card hover animations */
+  .card-hover {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .card-hover:hover {
+    @apply -translate-y-2 shadow-xl;
+  }
+
+  /* Image zoom on hover */
+  .img-zoom-container {
+    @apply overflow-hidden;
+  }
+
+  .img-zoom-container img {
+    @apply transition-transform duration-700 ease-out;
+  }
+
+  .img-zoom-container:hover img {
+    @apply scale-110;
   }
 }
 

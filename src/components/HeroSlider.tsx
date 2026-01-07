@@ -1,39 +1,55 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
 import heroTruck from "@/assets/hero-truck.jpg";
+import diapo1 from "@/assets/diapo-1.jpeg";
+import diapo2 from "@/assets/diapo-2.jpeg";
 
 const slides = [
   {
     id: 1,
-    title: ["Notre vocation", "Les opérations minières"],
+    title: ["Our Expertise", "Mining Operations"],
     image: heroTruck,
   },
   {
     id: 2,
-    title: ["Tout type", "de Transport de minerai"],
-    image: heroTruck,
+    title: ["Complete", "Logistics Solutions"],
+    image: diapo1,
   },
   {
     id: 3,
-    title: ["Un personnel", "qualifié et passionné"],
-    image: heroTruck,
+    title: ["Reliable", "Energy Supply"],
+    image: diapo2,
   },
 ];
 
-import { useState, useEffect } from "react";
-
 const HeroSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5000);
+      setIsAnimating(true);
+      setTimeout(() => {
+        setCurrentSlide((prev) => (prev + 1) % slides.length);
+        setIsAnimating(false);
+      }, 500);
+    }, 6000);
     return () => clearInterval(timer);
   }, []);
 
   const scrollToAbout = () => {
     document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const goToSlide = (index: number) => {
+    if (index !== currentSlide) {
+      setIsAnimating(true);
+      setTimeout(() => {
+        setCurrentSlide(index);
+        setIsAnimating(false);
+      }, 300);
+    }
   };
 
   return (
@@ -49,78 +65,74 @@ const HeroSlider = () => {
           <img
             src={slide.image}
             alt={slide.title.join(" ")}
-            className="w-full h-full object-cover"
+            className={`w-full h-full object-cover transition-transform duration-[8000ms] ease-out ${
+              index === currentSlide ? "scale-110" : "scale-100"
+            }`}
           />
           <div className="absolute inset-0 gradient-overlay" />
         </div>
       ))}
 
-      {/* Gold Corner Decoration */}
-      <div className="absolute top-0 right-0 w-32 h-32 overflow-hidden z-20">
-        <div className="absolute -top-16 -right-16 w-32 h-32 bg-primary transform rotate-45" />
+      {/* Gold Corner Decoration - matching WAU style */}
+      <div className="absolute top-0 right-0 w-48 h-48 overflow-hidden z-20 pointer-events-none">
+        <div className="absolute -top-24 -right-24 w-48 h-48 bg-primary transform rotate-45 shadow-lg" />
       </div>
 
       {/* Content */}
       <div className="absolute inset-0 z-20 flex items-center justify-center">
-        <div className="text-center">
+        <div className="text-center px-4">
           {slides.map((slide, index) => (
             <div
               key={slide.id}
-              className={`transition-all duration-700 ${
-                index === currentSlide
+              className={`transition-all duration-700 ease-out ${
+                index === currentSlide && !isAnimating
                   ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-8 absolute"
+                  : "opacity-0 translate-y-12 absolute pointer-events-none"
               }`}
             >
               {index === currentSlide && (
-                <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-shadow">
-                  <span className="text-primary">{slide.title[0]}</span>
-                  <br />
-                  <span style={{ color: 'white' }}>{slide.title[1]}</span>
+                <h1 className="text-4xl md:text-6xl lg:text-8xl font-heading font-bold text-shadow leading-tight">
+                  <span className="text-primary block animate-fade-in">{slide.title[0]}</span>
+                  <span className="text-white block animate-fade-in" style={{ animationDelay: '0.2s' }}>{slide.title[1]}</span>
                 </h1>
               )}
             </div>
           ))}
           
-          <div className="flex justify-center gap-4 mt-8">
-            <Link to="/nous" className="btn-primary">
-              Voir plus
+          <div className="flex justify-center gap-6 mt-12 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+            <Link to="/mining-service" className="btn-primary">
+              Learn More
             </Link>
             <Link to="/contacts" className="btn-outline">
-              Nous contacter
+              Contact Us
             </Link>
           </div>
         </div>
       </div>
 
-      {/* Slide Indicators */}
-      <div className="absolute right-8 top-1/2 -translate-y-1/2 z-20 flex flex-col gap-3">
+      {/* Slide Indicators - WAU style vertical dots */}
+      <div className="absolute right-8 top-1/2 -translate-y-1/2 z-20 flex flex-col gap-4">
         {slides.map((_, index) => (
           <button
             key={index}
-            onClick={() => setCurrentSlide(index)}
-            className={`w-3 h-3 rounded-full border-2 transition-all ${
+            onClick={() => goToSlide(index)}
+            className={`w-3 h-3 rounded-full border-2 border-white transition-all duration-300 ${
               index === currentSlide
-                ? "scale-125"
-                : "opacity-50 hover:opacity-100"
+                ? "bg-white scale-150"
+                : "bg-transparent opacity-60 hover:opacity-100 hover:scale-125"
             }`}
-            style={{ 
-              backgroundColor: index === currentSlide ? 'white' : 'transparent',
-              borderColor: 'white'
-            }}
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}
       </div>
 
-      {/* Scroll Down Button */}
+      {/* Scroll Down Button - WAU style animated arrow */}
       <button
         onClick={scrollToAbout}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 w-12 h-12 border-2 rounded-full flex items-center justify-center transition-colors animate-pulse-slow"
-        style={{ borderColor: 'rgba(255,255,255,0.5)', color: 'white' }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 w-14 h-14 border-2 border-white/50 rounded-full flex items-center justify-center transition-all duration-300 hover:border-white hover:bg-white/10 group"
         aria-label="Scroll down"
       >
-        <ChevronDown className="w-6 h-6" />
+        <ChevronDown className="w-6 h-6 text-white animate-bounce" />
       </button>
     </section>
   );
