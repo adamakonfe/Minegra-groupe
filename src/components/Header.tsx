@@ -4,6 +4,7 @@ import { Menu, X, ChevronDown, Search } from "lucide-react";
 import minegraLogo from "@/assets/minegra-logo.jpg";
 
 const navItems = [
+  { label: "ACCUEIL", href: "/", hasDropdown: false },
   { label: "MINING SERVICE", href: "/mining-service", hasDropdown: true },
   { label: "LOGISTICS SOLUTIONS", href: "/logistics-solutions", hasDropdown: true },
   { label: "ENERGY SUPPLY & SERVICES", href: "/energy-services", hasDropdown: true },
