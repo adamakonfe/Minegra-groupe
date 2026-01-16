@@ -8,17 +8,17 @@ import diapo2 from "@/assets/diapo-2.jpeg";
 const slides = [
   {
     id: 1,
-    title: ["Our Expertise", "Mining Operations"],
+    title: ["Notre Expertise", "Opérations Minières"],
     image: heroTruck,
   },
   {
     id: 2,
-    title: ["Complete", "Logistics Solutions"],
+    title: ["Solutions", "Logistiques Complètes"],
     image: diapo1,
   },
   {
     id: 3,
-    title: ["Reliable", "Energy Supply"],
+    title: ["Approvisionnement", "Énergétique Fiable"],
     image: diapo2,
   },
 ];
@@ -101,10 +101,10 @@ const HeroSlider = () => {
           
           <div className="flex justify-center gap-6 mt-12 animate-fade-in" style={{ animationDelay: '0.4s' }}>
             <Link to="/mining-service" className="btn-primary">
-              Learn More
+              En Savoir Plus
             </Link>
             <Link to="/contacts" className="btn-outline">
-              Contact Us
+              Contactez-Nous
             </Link>
           </div>
         </div>
@@ -121,7 +121,7 @@ const HeroSlider = () => {
                 ? "bg-white scale-150"
                 : "bg-transparent opacity-60 hover:opacity-100 hover:scale-125"
             }`}
-            aria-label={`Go to slide ${index + 1}`}
+            aria-label={`Aller à la diapositive ${index + 1}`}
           />
         ))}
       </div>
@@ -130,7 +130,7 @@ const HeroSlider = () => {
       <button
         onClick={scrollToAbout}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 w-14 h-14 border-2 border-white/50 rounded-full flex items-center justify-center transition-all duration-300 hover:border-white hover:bg-white/10 group"
-        aria-label="Scroll down"
+        aria-label="Défiler vers le bas"
       >
         <ChevronDown className="w-6 h-6 text-white animate-bounce" />
       </button>

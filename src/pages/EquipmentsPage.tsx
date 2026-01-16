@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import Layout from "@/components/Layout";
 import PageBanner from "@/components/PageBanner";
+import { ScrollAnimation } from "@/hooks/useScrollAnimation";
 import mining1 from "@/assets/mining-1.jpeg";
 import mining2 from "@/assets/mining-2.jpeg";
 import mining4 from "@/assets/mining-4.jpeg";
@@ -13,40 +14,55 @@ import drill1 from "@/assets/drill-1.jpeg";
 import drill2 from "@/assets/drill-2.jpeg";
 
 const equipments = [
-  mining6,
-  mining1,
-  mining2,
-  diapo1,
-  diapo2,
-  diapo3,
-  drill1,
-  drill2,
-  mining4,
-  mining5,
+  { image: mining6, name: "Camion Minier" },
+  { image: mining1, name: "Excavatrice" },
+  { image: mining2, name: "Foreuse" },
+  { image: diapo1, name: "Chargeuse" },
+  { image: diapo2, name: "Bulldozer" },
+  { image: diapo3, name: "Tombereau" },
+  { image: drill1, name: "Machine de Forage" },
+  { image: drill2, name: "Foreuse Rotative" },
+  { image: mining4, name: "Concasseur" },
+  { image: mining5, name: "Crible" },
 ];
 
 const EquipmentsPage = () => {
   return (
     <Layout>
-      <PageBanner title="Gamme Variée D'équipements" subtitle="NOTRE ÉQUIPEMENT" />
+      <PageBanner title="Gamme Variée D'équipements" subtitle="MINEGRA GROUP" />
       
       <div className="py-16 bg-background">
         <div className="container-wau">
+          <ScrollAnimation animation="fade-up">
+            <div className="text-center mb-12">
+              <div className="section-subtitle flex items-center justify-center gap-3 mb-4">
+                <div className="gold-line" />
+                NOTRE PARC D'ÉQUIPEMENTS
+                <div className="gold-line" />
+              </div>
+              <h2 className="section-title">
+                Équipements <span className="text-primary">Modernes</span>
+              </h2>
+            </div>
+          </ScrollAnimation>
+
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {equipments.map((equipment, index) => (
-              <div key={index} className="group">
-                <div className="overflow-hidden shadow-lg">
-                  <img
-                    src={equipment}
-                    alt={`Équipement ${index + 1}`}
-                    className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
+              <ScrollAnimation key={index} animation="fade-up" delay={index * 50}>
+                <div className="group">
+                  <div className="overflow-hidden shadow-lg">
+                    <img
+                      src={equipment.image}
+                      alt={equipment.name}
+                      className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                  </div>
+                  <button className="w-full btn-primary flex items-center justify-center gap-2 mt-0">
+                    {equipment.name}
+                    <ArrowRight className="w-4 h-4" />
+                  </button>
                 </div>
-                <button className="w-full btn-primary flex items-center justify-center gap-2 mt-0">
-                  VOIR PLUS
-                  <ArrowRight className="w-4 h-4" />
-                </button>
-              </div>
+              </ScrollAnimation>
             ))}
           </div>
         </div>
