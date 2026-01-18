@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Phone } from "lucide-react";
+import { Phone, ArrowRight } from "lucide-react";
 import ceoPortrait from "@/assets/ceo-portrait.jpg";
 import { ScrollAnimation } from "@/hooks/useScrollAnimation";
 
@@ -7,70 +7,98 @@ const AboutSection = () => {
   return (
     <section id="about" className="py-20 lg:py-28 bg-background overflow-hidden">
       <div className="container-wau">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Image Side */}
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          {/* Image Side - WAU Style */}
           <ScrollAnimation animation="fade-right" duration={800}>
             <div className="relative group">
-              <div className="relative z-10 img-zoom-container">
+              {/* Main Image */}
+              <div className="relative z-10 img-zoom-container overflow-hidden">
                 <img
                   src={ceoPortrait}
                   alt="CEO MINEGRA GROUP"
-                  className="w-full max-w-md mx-auto lg:mx-0 shadow-2xl"
+                  className="w-full max-w-lg mx-auto lg:mx-0 shadow-2xl"
                 />
+                {/* Gold accent bar */}
+                <div className="absolute bottom-0 left-0 w-2 h-full bg-primary transform origin-bottom transition-all duration-700 group-hover:h-1/2" />
               </div>
+              
               {/* Decorative elements - WAU style */}
-              <div className="absolute -bottom-6 -right-6 w-40 h-40 bg-primary/20 hidden lg:block transition-all duration-500 group-hover:bg-primary/30" />
-              <div className="absolute -top-6 -left-6 w-28 h-28 border-4 border-primary hidden lg:block transition-all duration-500 group-hover:scale-110" />
-              <div className="absolute top-1/2 -right-4 w-2 h-24 bg-primary hidden lg:block" />
+              <div className="absolute -bottom-8 -right-8 w-48 h-48 bg-primary/10 hidden lg:block transition-all duration-500 group-hover:bg-primary/20" />
+              <div className="absolute -top-8 -left-8 w-32 h-32 border-4 border-primary hidden lg:block transition-all duration-700 group-hover:scale-110 group-hover:rotate-3" />
+              
+              {/* Gold vertical line */}
+              <div className="absolute top-1/3 -right-4 w-1 h-24 bg-primary hidden lg:block" />
+              <div className="absolute bottom-1/4 -right-4 w-1 h-16 bg-primary/50 hidden lg:block" />
             </div>
           </ScrollAnimation>
 
-          {/* Content Side */}
+          {/* Content Side - WAU Style */}
           <ScrollAnimation animation="fade-left" duration={800} delay={200}>
             <div className="lg:pl-8">
-              <div className="section-subtitle flex items-center gap-3">
-                <div className="gold-line gold-line-animated" />
-                <span>About Us</span>
+              {/* Section Label */}
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-16 h-1 bg-primary animate-line-grow" />
+                <span className="text-primary font-semibold text-sm uppercase tracking-[0.2em]">
+                  A Propos
+                </span>
               </div>
-              <h2 className="section-title mb-6">
-                Professional <br />
-                <span className="text-primary">Service Excellence</span>
+
+              {/* Title - WAU Style */}
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold leading-tight mb-8">
+                Un Service<br />
+                <span className="text-primary">Professionnel</span>
               </h2>
-              <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
-                Our mission is to provide the highest quality mining services
-                while adhering to the strictest safety and environmental standards.
-                With decades of experience in West Africa, we deliver excellence at every stage.
+
+              {/* Description */}
+              <p className="text-muted-foreground text-lg mb-10 leading-relaxed">
+                Notre mission est de fournir des services de forage minier de la plus haute qualité
+                tout en respectant les normes les plus strictes en matière de sécurité et d'environnement.
+                Avec des décennies d'expérience en Afrique de l'Ouest, nous offrons l'excellence à chaque étape.
               </p>
 
-              {/* CEO Info */}
-              <div className="flex items-center gap-4 mb-8 p-4 bg-muted rounded-sm transition-all duration-300 hover:bg-muted/80">
-                <img
-                  src={ceoPortrait}
-                  alt="CEO"
-                  className="w-20 h-20 rounded-full object-cover border-3 border-primary shadow-lg"
-                />
+              {/* CEO Info Card - WAU Style */}
+              <div className="flex items-center gap-6 mb-10 p-5 bg-muted hover-lift cursor-pointer">
+                <div className="relative">
+                  <img
+                    src={ceoPortrait}
+                    alt="CEO"
+                    className="w-20 h-20 rounded-full object-cover border-4 border-primary shadow-lg"
+                  />
+                  <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-primary rounded-full flex items-center justify-center">
+                    <span className="text-primary-foreground text-xs font-bold">CEO</span>
+                  </div>
+                </div>
                 <div>
-                  <h4 className="font-heading font-bold text-xl">Leadership Team</h4>
+                  <h4 className="font-heading font-bold text-xl text-foreground">Vincent K. OUEDRAOGO</h4>
                   <span className="text-primary text-sm uppercase tracking-wider font-semibold">MINEGRA GROUP</span>
                 </div>
               </div>
 
-              {/* Contact */}
-              <div className="flex flex-wrap items-center gap-6">
+              {/* Contact & CTA */}
+              <div className="flex flex-wrap items-center gap-8">
+                {/* Phone Contact */}
                 <div className="group">
-                  <span className="text-sm text-muted-foreground block mb-2">Contact us:</span>
+                  <span className="text-sm text-muted-foreground block mb-2 uppercase tracking-wider">
+                    Nous contacter :
+                  </span>
                   <a
                     href="tel:+22670206487"
-                    className="flex items-center gap-3 text-lg font-semibold hover:text-primary transition-all duration-300"
+                    className="flex items-center gap-4 text-xl font-bold hover:text-primary transition-all duration-300"
                   >
-                    <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg">
-                      <Phone className="w-5 h-5 text-primary-foreground" />
+                    <div className="w-14 h-14 rounded-full bg-primary flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg pulse-glow">
+                      <Phone className="w-6 h-6 text-primary-foreground" />
                     </div>
-                    (00226) 70 20 64 87
+                    <span>(00226) 70 20 64 87</span>
                   </a>
                 </div>
-                <Link to="/mining-service" className="btn-primary">
-                  Learn More
+
+                {/* CTA Button */}
+                <Link 
+                  to="/about" 
+                  className="btn-primary btn-wau flex items-center gap-3 group"
+                >
+                  <span>Voir Plus</span>
+                  <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-2" />
                 </Link>
               </div>
             </div>
