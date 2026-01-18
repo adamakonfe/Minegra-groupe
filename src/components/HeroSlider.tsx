@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, ArrowRight } from "lucide-react";
 import heroTruck from "@/assets/hero-truck.jpg";
 import diapo1 from "@/assets/diapo-1.jpeg";
 import diapo2 from "@/assets/diapo-2.jpeg";
@@ -8,18 +8,21 @@ import diapo2 from "@/assets/diapo-2.jpeg";
 const slides = [
   {
     id: 1,
-    title: ["Notre Expertise", "Opérations Minières"],
+    title: ["Notre Vocation", "Les Opérations Minières"],
     image: heroTruck,
+    link: "/mining-service",
   },
   {
     id: 2,
-    title: ["Solutions", "Logistiques Complètes"],
+    title: ["Tout Type", "de Transport de Minerai"],
     image: diapo1,
+    link: "/logistics-solutions",
   },
   {
     id: 3,
-    title: ["Approvisionnement", "Énergétique Fiable"],
+    title: ["Un Personnel", "Qualifié et Passionné"],
     image: diapo2,
+    link: "/team",
   },
 ];
 
@@ -69,43 +72,67 @@ const HeroSlider = () => {
               index === currentSlide ? "scale-110" : "scale-100"
             }`}
           />
-          <div className="absolute inset-0 gradient-overlay" />
+          {/* Gradient Overlay - WAU Style */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
         </div>
       ))}
 
-      {/* Gold Corner Decoration - matching WAU style */}
-      <div className="absolute top-0 right-0 w-48 h-48 overflow-hidden z-20 pointer-events-none">
-        <div className="absolute -top-24 -right-24 w-48 h-48 bg-primary transform rotate-45 shadow-lg" />
-      </div>
+      {/* Gold Corner Decoration - WAU style */}
+      <div className="gold-corner z-20" />
 
       {/* Content */}
-      <div className="absolute inset-0 z-20 flex items-center justify-center">
-        <div className="text-center px-4">
-          {slides.map((slide, index) => (
-            <div
-              key={slide.id}
-              className={`transition-all duration-700 ease-out ${
-                index === currentSlide && !isAnimating
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-12 absolute pointer-events-none"
-              }`}
-            >
-              {index === currentSlide && (
-                <h1 className="text-4xl md:text-6xl lg:text-8xl font-heading font-bold text-shadow leading-tight">
-                  <span className="text-primary block animate-fade-in">{slide.title[0]}</span>
-                  <span className="text-white block animate-fade-in" style={{ animationDelay: '0.2s' }}>{slide.title[1]}</span>
-                </h1>
-              )}
-            </div>
-          ))}
-          
-          <div className="flex justify-center gap-6 mt-12 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-            <Link to="/mining-service" className="btn-primary">
-              En Savoir Plus
-            </Link>
-            <Link to="/contacts" className="btn-outline">
-              Contactez-Nous
-            </Link>
+      <div className="absolute inset-0 z-20 flex items-center">
+        <div className="container-wau">
+          <div className="max-w-4xl">
+            {slides.map((slide, index) => (
+              <div
+                key={slide.id}
+                className={`transition-all duration-700 ease-out ${
+                  index === currentSlide && !isAnimating
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-12 absolute pointer-events-none"
+                }`}
+              >
+                {index === currentSlide && (
+                  <>
+                    {/* Title */}
+                    <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-heading font-bold leading-tight mb-8">
+                      <span className="text-primary block animate-fade-in">
+                        {slide.title[0]}
+                      </span>
+                      <span 
+                        className="text-white block animate-fade-in" 
+                        style={{ animationDelay: '0.2s' }}
+                      >
+                        {slide.title[1]}
+                      </span>
+                    </h1>
+
+                    {/* Buttons - WAU Style */}
+                    <div 
+                      className="flex flex-wrap gap-4 animate-fade-in" 
+                      style={{ animationDelay: '0.4s' }}
+                    >
+                      <Link 
+                        to={slide.link} 
+                        className="btn-primary btn-wau flex items-center gap-3 group"
+                      >
+                        <span>Voir Plus</span>
+                        <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-2" />
+                      </Link>
+                      <Link 
+                        to="/contacts" 
+                        className="btn-outline flex items-center gap-3 group"
+                      >
+                        <span>Nous Contacter</span>
+                        <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-2" />
+                      </Link>
+                    </div>
+                  </>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -116,23 +143,41 @@ const HeroSlider = () => {
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`w-3 h-3 rounded-full border-2 border-white transition-all duration-300 ${
+            className={`relative w-4 h-4 rounded-full border-2 transition-all duration-300 ${
               index === currentSlide
-                ? "bg-white scale-150"
-                : "bg-transparent opacity-60 hover:opacity-100 hover:scale-125"
+                ? "border-primary bg-primary scale-125"
+                : "border-white/60 bg-transparent hover:border-white hover:scale-110"
             }`}
             aria-label={`Aller à la diapositive ${index + 1}`}
-          />
+          >
+            {index === currentSlide && (
+              <span className="absolute inset-0 rounded-full bg-primary animate-ping opacity-50" />
+            )}
+          </button>
         ))}
       </div>
 
-      {/* Scroll Down Button - WAU style animated arrow */}
+      {/* Slide Counter */}
+      <div className="absolute left-8 bottom-20 z-20 hidden md:flex items-center gap-4 text-white">
+        <span className="text-4xl font-heading font-bold text-primary">
+          0{currentSlide + 1}
+        </span>
+        <div className="w-16 h-0.5 bg-white/30">
+          <div 
+            className="h-full bg-primary transition-all duration-300"
+            style={{ width: `${((currentSlide + 1) / slides.length) * 100}%` }}
+          />
+        </div>
+        <span className="text-lg text-white/60">0{slides.length}</span>
+      </div>
+
+      {/* Scroll Down Button - WAU style */}
       <button
         onClick={scrollToAbout}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 w-14 h-14 border-2 border-white/50 rounded-full flex items-center justify-center transition-all duration-300 hover:border-white hover:bg-white/10 group"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 w-14 h-14 border-2 border-white/30 rounded-full flex items-center justify-center transition-all duration-300 hover:border-primary hover:bg-primary/10 group"
         aria-label="Défiler vers le bas"
       >
-        <ChevronDown className="w-6 h-6 text-white animate-bounce" />
+        <ChevronDown className="w-6 h-6 text-white animate-bounce group-hover:text-primary" />
       </button>
     </section>
   );
