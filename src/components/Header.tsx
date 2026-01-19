@@ -100,18 +100,18 @@ const Header = () => {
   return (
     <header className={`bg-background sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'shadow-lg' : ''}`}>
       <div className="container-wau">
-        {/* Logo Section with Company Name */}
-        <div className="flex items-center justify-between py-4 lg:py-6 border-b border-border">
-          <Link to="/" className="flex items-center gap-4 lg:gap-6 group">
+        {/* Logo Section - WAU Style */}
+        <div className="flex items-center justify-between py-5 lg:py-6">
+          <Link to="/" className="flex items-center gap-4 group">
             <div className="relative overflow-hidden">
               <img 
                 src={minegraLogo} 
                 alt="MINEGRA GROUP" 
-                className="h-16 lg:h-20 w-auto transition-transform duration-300 group-hover:scale-105" 
+                className="h-12 lg:h-14 w-auto transition-transform duration-300 group-hover:scale-105" 
               />
             </div>
-            <div className="hidden md:block">
-              <h1 className="text-secondary font-heading font-bold text-2xl lg:text-3xl xl:text-4xl tracking-wide transition-colors duration-300 group-hover:text-primary">
+            <div className="hidden sm:block">
+              <h1 className="text-secondary font-heading font-extrabold text-xl lg:text-2xl tracking-wide uppercase">
                 MINEGRA GROUP
               </h1>
             </div>
@@ -119,19 +119,19 @@ const Header = () => {
           
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden w-12 h-12 flex items-center justify-center rounded-sm border border-border hover:border-primary hover:text-primary transition-all duration-300"
+            className="lg:hidden w-12 h-12 flex items-center justify-center text-secondary hover:text-primary transition-all duration-300"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
           </button>
         </div>
 
-        {/* Navigation Bar */}
-        <div className="flex items-center justify-between py-4">
+        {/* Navigation Bar - Separate line like WAU */}
+        <div className="hidden lg:flex items-center justify-between py-3 border-t border-border">
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
-            {navItems.map((item) => (
+          <nav className="flex items-center">
+            {navItems.map((item, index) => (
               <div 
                 key={item.label}
                 className="relative"
@@ -140,15 +140,19 @@ const Header = () => {
               >
                 <Link
                   to={item.href}
-                  className={`nav-link group ${location.pathname === item.href ? 'text-primary' : ''}`}
+                  className={`flex items-center gap-1.5 px-4 py-2 text-sm font-semibold tracking-wide uppercase transition-all duration-300 ${
+                    location.pathname === item.href 
+                      ? 'text-primary' 
+                      : 'text-secondary hover:text-primary'
+                  }`}
                 >
                   <span>{item.label}</span>
                   {item.hasDropdown && (
-                    <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${activeDropdown === item.label ? 'rotate-180' : ''}`} />
+                    <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-300 ${activeDropdown === item.label ? 'rotate-180' : ''}`} />
                   )}
                 </Link>
 
-                {/* Dropdown Menu */}
+                {/* Dropdown Menu - WAU Style */}
                 {item.hasDropdown && item.dropdownItems && (
                   <div 
                     className={`absolute top-full left-0 pt-2 transition-all duration-300 ${
@@ -157,19 +161,18 @@ const Header = () => {
                         : 'opacity-0 invisible -translate-y-2'
                     }`}
                   >
-                    <div className="bg-white shadow-2xl rounded-lg overflow-hidden min-w-[250px] border border-border">
+                    <div className="bg-white shadow-2xl min-w-[240px] border border-border">
                       {/* Gold top line */}
                       <div className="h-1 bg-primary w-full" />
                       
-                      <div className="py-2">
-                        {item.dropdownItems.map((dropItem, index) => (
+                      <div className="py-1">
+                        {item.dropdownItems.map((dropItem) => (
                           <Link
                             key={dropItem.label}
                             to={dropItem.href}
-                            className="block px-6 py-3 text-secondary hover:text-primary hover:bg-muted transition-all duration-300 relative group/item"
-                            style={{ animationDelay: `${index * 50}ms` }}
+                            className="block px-5 py-3 text-sm font-medium text-secondary hover:text-primary hover:bg-muted transition-all duration-300 relative group/item"
                           >
-                            <span className="relative z-10 font-medium">{dropItem.label}</span>
+                            <span className="relative z-10">{dropItem.label}</span>
                             {/* Hover indicator */}
                             <span className="absolute left-0 top-0 h-full w-1 bg-primary transform scale-y-0 group-hover/item:scale-y-100 transition-transform duration-300 origin-top" />
                           </Link>
@@ -182,16 +185,16 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* Right Side Actions */}
-          <div className="hidden lg:flex items-center gap-4">
-            <button className="w-12 h-12 rounded-full border-2 border-border hover:border-primary hover:text-primary transition-all duration-300 flex items-center justify-center hover:scale-110">
+          {/* Right Side Actions - WAU Style */}
+          <div className="flex items-center gap-3">
+            <button className="w-11 h-11 rounded-full border border-border hover:border-primary hover:text-primary transition-all duration-300 flex items-center justify-center">
               <Search className="w-5 h-5" />
             </button>
             <Link
               to="/contacts"
-              className="btn-primary btn-wau flex items-center gap-2"
+              className="bg-secondary text-secondary-foreground px-6 py-3 font-bold text-sm uppercase tracking-wide hover:bg-primary hover:text-primary-foreground transition-all duration-300"
             >
-              <span>NOUS CONTACTER</span>
+              NOUS CONTACTER
             </Link>
           </div>
         </div>
@@ -199,15 +202,16 @@ const Header = () => {
         {/* Mobile Navigation */}
         <div className={`lg:hidden overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? 'max-h-[800px] opacity-100' : 'max-h-0 opacity-0'}`}>
           <nav className="py-4 border-t border-border">
-            <div className="flex flex-col gap-1">
+            <div className="flex flex-col">
               {navItems.map((item, index) => (
                 <div key={item.label}>
                   {item.hasDropdown ? (
                     <>
                       <button
                         onClick={() => toggleMobileDropdown(item.label)}
-                        className={`w-full nav-link py-3 px-4 hover:bg-muted transition-all duration-300 justify-between ${location.pathname === item.href ? 'text-primary bg-muted' : ''}`}
-                        style={{ animationDelay: `${index * 0.1}s` }}
+                        className={`w-full flex items-center justify-between py-3 px-2 text-sm font-semibold uppercase tracking-wide transition-all duration-300 ${
+                          location.pathname === item.href ? 'text-primary' : 'text-secondary hover:text-primary'
+                        }`}
                       >
                         <span>{item.label}</span>
                         <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${mobileExpandedItem === item.label ? 'rotate-180' : ''}`} />
@@ -221,7 +225,7 @@ const Header = () => {
                           <Link
                             key={dropItem.label}
                             to={dropItem.href}
-                            className="block py-2.5 px-8 text-secondary hover:text-primary border-l-2 border-transparent hover:border-primary transition-all duration-300"
+                            className="block py-2.5 px-6 text-sm text-secondary hover:text-primary border-l-2 border-transparent hover:border-primary transition-all duration-300"
                             onClick={() => setIsOpen(false)}
                           >
                             {dropItem.label}
@@ -232,18 +236,19 @@ const Header = () => {
                   ) : (
                     <Link
                       to={item.href}
-                      className={`nav-link py-3 px-4 hover:bg-muted transition-all duration-300 ${location.pathname === item.href ? 'text-primary bg-muted' : ''}`}
+                      className={`block py-3 px-2 text-sm font-semibold uppercase tracking-wide transition-all duration-300 ${
+                        location.pathname === item.href ? 'text-primary' : 'text-secondary hover:text-primary'
+                      }`}
                       onClick={() => setIsOpen(false)}
-                      style={{ animationDelay: `${index * 0.1}s` }}
                     >
-                      <span>{item.label}</span>
+                      {item.label}
                     </Link>
                   )}
                 </div>
               ))}
               <Link 
                 to="/contacts" 
-                className="btn-primary text-center mt-4 mx-4" 
+                className="bg-secondary text-secondary-foreground text-center py-3 mt-4 font-bold text-sm uppercase tracking-wide" 
                 onClick={() => setIsOpen(false)}
               >
                 NOUS CONTACTER
