@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown, Search } from "lucide-react";
+import { Menu, X, ChevronDown, Search, Plus } from "lucide-react";
 import minegraLogo from "@/assets/minegra-logo.jpg";
 
 interface DropdownItem {
@@ -100,38 +100,20 @@ const Header = () => {
   return (
     <header className={`bg-background sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'shadow-lg' : ''}`}>
       <div className="container-wau">
-        {/* Logo Section - WAU Style */}
-        <div className="flex items-center justify-between py-5 lg:py-6">
-          <Link to="/" className="flex items-center gap-4 group">
-            <div className="relative overflow-hidden">
-              <img 
-                src={minegraLogo} 
-                alt="MINEGRA GROUP" 
-                className="h-12 lg:h-14 w-auto transition-transform duration-300 group-hover:scale-105" 
-              />
-            </div>
-            <div className="hidden sm:block">
-              <h1 className="text-secondary font-heading font-extrabold text-xl lg:text-2xl tracking-wide uppercase">
-                MINEGRA GROUP
-              </h1>
-            </div>
+        {/* Single Row Navigation - WAU Style */}
+        <div className="flex items-center justify-between py-4">
+          {/* Logo */}
+          <Link to="/" className="flex items-center gap-3 group flex-shrink-0">
+            <img 
+              src={minegraLogo} 
+              alt="MINEGRA GROUP" 
+              className="h-14 lg:h-16 w-auto transition-transform duration-300 group-hover:scale-105" 
+            />
           </Link>
-          
-          {/* Mobile Menu Button */}
-          <button
-            className="lg:hidden w-12 h-12 flex items-center justify-center text-secondary hover:text-primary transition-all duration-300"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle menu"
-          >
-            {isOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
-          </button>
-        </div>
 
-        {/* Navigation Bar - Separate line like WAU */}
-        <div className="hidden lg:flex items-center justify-between py-3 border-t border-border">
-          {/* Desktop Navigation */}
-          <nav className="flex items-center">
-            {navItems.map((item, index) => (
+          {/* Desktop Navigation - All in one row */}
+          <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
+            {navItems.map((item) => (
               <div 
                 key={item.label}
                 className="relative"
@@ -140,7 +122,7 @@ const Header = () => {
               >
                 <Link
                   to={item.href}
-                  className={`flex items-center gap-1.5 px-4 py-2 text-sm font-semibold tracking-wide uppercase transition-all duration-300 ${
+                  className={`flex items-center gap-1 px-3 xl:px-4 py-2 text-sm font-bold tracking-wide uppercase transition-all duration-300 ${
                     location.pathname === item.href 
                       ? 'text-primary' 
                       : 'text-secondary hover:text-primary'
@@ -148,23 +130,21 @@ const Header = () => {
                 >
                   <span>{item.label}</span>
                   {item.hasDropdown && (
-                    <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-300 ${activeDropdown === item.label ? 'rotate-180' : ''}`} />
+                    <Plus className={`w-3 h-3 transition-transform duration-300 ${activeDropdown === item.label ? 'rotate-45' : ''}`} />
                   )}
                 </Link>
 
-                {/* Dropdown Menu - WAU Style */}
+                {/* Dropdown Menu */}
                 {item.hasDropdown && item.dropdownItems && (
                   <div 
-                    className={`absolute top-full left-0 pt-2 transition-all duration-300 ${
+                    className={`absolute top-full left-0 pt-2 transition-all duration-300 z-50 ${
                       activeDropdown === item.label 
                         ? 'opacity-100 visible translate-y-0' 
                         : 'opacity-0 invisible -translate-y-2'
                     }`}
                   >
-                    <div className="bg-white shadow-2xl min-w-[240px] border border-border">
-                      {/* Gold top line */}
+                    <div className="bg-white shadow-2xl min-w-[220px] border border-border">
                       <div className="h-1 bg-primary w-full" />
-                      
                       <div className="py-1">
                         {item.dropdownItems.map((dropItem) => (
                           <Link
@@ -173,7 +153,6 @@ const Header = () => {
                             className="block px-5 py-3 text-sm font-medium text-secondary hover:text-primary hover:bg-muted transition-all duration-300 relative group/item"
                           >
                             <span className="relative z-10">{dropItem.label}</span>
-                            {/* Hover indicator */}
                             <span className="absolute left-0 top-0 h-full w-1 bg-primary transform scale-y-0 group-hover/item:scale-y-100 transition-transform duration-300 origin-top" />
                           </Link>
                         ))}
@@ -185,10 +164,10 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* Right Side Actions - WAU Style */}
-          <div className="flex items-center gap-3">
-            <button className="w-11 h-11 rounded-full border border-border hover:border-primary hover:text-primary transition-all duration-300 flex items-center justify-center">
-              <Search className="w-5 h-5" />
+          {/* Right Side - Search + Contact Button */}
+          <div className="hidden lg:flex items-center gap-4">
+            <button className="w-10 h-10 rounded-full border border-dashed border-secondary/40 hover:border-primary hover:text-primary transition-all duration-300 flex items-center justify-center">
+              <Search className="w-4 h-4" />
             </button>
             <Link
               to="/contacts"
@@ -197,27 +176,35 @@ const Header = () => {
               NOUS CONTACTER
             </Link>
           </div>
+          
+          {/* Mobile Menu Button */}
+          <button
+            className="lg:hidden w-12 h-12 flex items-center justify-center text-secondary hover:text-primary transition-all duration-300"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle menu"
+          >
+            {isOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
+          </button>
         </div>
 
         {/* Mobile Navigation */}
         <div className={`lg:hidden overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? 'max-h-[800px] opacity-100' : 'max-h-0 opacity-0'}`}>
           <nav className="py-4 border-t border-border">
             <div className="flex flex-col">
-              {navItems.map((item, index) => (
+              {navItems.map((item) => (
                 <div key={item.label}>
                   {item.hasDropdown ? (
                     <>
                       <button
                         onClick={() => toggleMobileDropdown(item.label)}
-                        className={`w-full flex items-center justify-between py-3 px-2 text-sm font-semibold uppercase tracking-wide transition-all duration-300 ${
+                        className={`w-full flex items-center justify-between py-3 px-2 text-sm font-bold uppercase tracking-wide transition-all duration-300 ${
                           location.pathname === item.href ? 'text-primary' : 'text-secondary hover:text-primary'
                         }`}
                       >
                         <span>{item.label}</span>
-                        <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${mobileExpandedItem === item.label ? 'rotate-180' : ''}`} />
+                        <Plus className={`w-4 h-4 transition-transform duration-300 ${mobileExpandedItem === item.label ? 'rotate-45' : ''}`} />
                       </button>
                       
-                      {/* Mobile Dropdown */}
                       <div className={`overflow-hidden transition-all duration-300 bg-muted/50 ${
                         mobileExpandedItem === item.label ? 'max-h-[300px]' : 'max-h-0'
                       }`}>
@@ -236,7 +223,7 @@ const Header = () => {
                   ) : (
                     <Link
                       to={item.href}
-                      className={`block py-3 px-2 text-sm font-semibold uppercase tracking-wide transition-all duration-300 ${
+                      className={`block py-3 px-2 text-sm font-bold uppercase tracking-wide transition-all duration-300 ${
                         location.pathname === item.href ? 'text-primary' : 'text-secondary hover:text-primary'
                       }`}
                       onClick={() => setIsOpen(false)}
