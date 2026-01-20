@@ -122,15 +122,15 @@ const Header = () => {
               >
                 <Link
                   to={item.href}
-                  className={`flex items-center gap-1 px-3 xl:px-4 py-2 text-sm font-bold tracking-wide uppercase transition-all duration-300 ${
+                  className={`flex items-center gap-1 px-3 xl:px-4 py-2 text-sm font-bold tracking-wide uppercase transition-all duration-300 relative ${
                     location.pathname === item.href 
-                      ? 'text-primary underline underline-offset-4 decoration-2' 
-                      : 'text-black hover:text-primary'
+                      ? 'text-black after:absolute after:bottom-0 after:left-3 after:right-3 after:h-0.5 after:bg-primary' 
+                      : 'text-black hover:text-black/70'
                   }`}
                 >
                   <span>{item.label}</span>
                   {item.hasDropdown && (
-                    <Plus className={`w-3 h-3 transition-transform duration-300 ${activeDropdown === item.label ? 'rotate-45' : ''}`} />
+                    <span className={`text-xs transition-transform duration-300 ${activeDropdown === item.label ? 'rotate-45' : ''}`}>+</span>
                   )}
                 </Link>
 
