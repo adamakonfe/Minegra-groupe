@@ -98,7 +98,7 @@ const Header = () => {
   };
 
   return (
-    <header className={`bg-background sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'shadow-lg' : ''}`}>
+    <header className={`bg-white sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'shadow-lg' : ''}`}>
       <div className="container-wau">
         {/* Single Row Navigation - WAU Style */}
         <div className="flex items-center justify-between py-4">
@@ -124,8 +124,8 @@ const Header = () => {
                   to={item.href}
                   className={`flex items-center gap-1 px-3 xl:px-4 py-2 text-sm font-bold tracking-wide uppercase transition-all duration-300 ${
                     location.pathname === item.href 
-                      ? 'text-primary' 
-                      : 'text-secondary hover:text-primary'
+                      ? 'text-primary underline underline-offset-4 decoration-2' 
+                      : 'text-black hover:text-primary'
                   }`}
                 >
                   <span>{item.label}</span>
@@ -143,14 +143,14 @@ const Header = () => {
                         : 'opacity-0 invisible -translate-y-2'
                     }`}
                   >
-                    <div className="bg-white shadow-2xl min-w-[220px] border border-border">
+                    <div className="bg-white shadow-2xl min-w-[220px] border border-gray-100">
                       <div className="h-1 bg-primary w-full" />
                       <div className="py-1">
                         {item.dropdownItems.map((dropItem) => (
                           <Link
                             key={dropItem.label}
                             to={dropItem.href}
-                            className="block px-5 py-3 text-sm font-medium text-secondary hover:text-primary hover:bg-muted transition-all duration-300 relative group/item"
+                            className="block px-5 py-3 text-sm font-medium text-black hover:text-primary hover:bg-gray-50 transition-all duration-300 relative group/item"
                           >
                             <span className="relative z-10">{dropItem.label}</span>
                             <span className="absolute left-0 top-0 h-full w-1 bg-primary transform scale-y-0 group-hover/item:scale-y-100 transition-transform duration-300 origin-top" />
@@ -166,14 +166,14 @@ const Header = () => {
 
           {/* Right Side - Search + Contact Button */}
           <div className="hidden lg:flex items-center gap-4">
-            <button className="w-10 h-10 rounded-full border border-dashed border-secondary/40 hover:border-primary hover:text-primary transition-all duration-300 flex items-center justify-center">
+            <button className="w-10 h-10 rounded-full border border-dashed border-gray-400 hover:border-primary hover:text-primary transition-all duration-300 flex items-center justify-center text-black">
               <Search className="w-4 h-4" />
             </button>
             <Link
               to="/contacts"
-              className="bg-secondary text-secondary-foreground px-6 py-3 font-bold text-sm uppercase tracking-wide hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+              className="bg-black text-white px-6 py-3 font-bold text-sm uppercase tracking-wide hover:bg-primary transition-all duration-300 transform skew-x-[-5deg]"
             >
-              NOUS CONTACTER
+              <span className="inline-block skew-x-[5deg]">NOUS CONTACTER</span>
             </Link>
           </div>
           
