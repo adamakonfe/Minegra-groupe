@@ -19,12 +19,12 @@ const navItems: NavItem[] = [
   { label: "ACCUEIL", href: "/", hasDropdown: false },
   { 
     label: "A PROPOS", 
-    href: "/about", 
+    href: "/nous", 
     hasDropdown: true,
     dropdownItems: [
-      { label: "Notre Histoire", href: "/about" },
-      { label: "Notre Équipe", href: "/team" },
-      { label: "Nos Valeurs", href: "/about#values" },
+      { label: "Notre Histoire", href: "/nous" },
+      { label: "Notre Équipe", href: "/equipe" },
+      { label: "Nos Valeurs", href: "/nous#values" },
       { label: "Carrières", href: "/carriere" },
     ]
   },
@@ -46,7 +46,7 @@ const navItems: NavItem[] = [
     dropdownItems: [
       { label: "Transport de Marchandises", href: "/logistique" },
       { label: "Gestion de Flotte", href: "/logistics-solutions" },
-      { label: "Équipements Lourds", href: "/equipments" },
+      { label: "Équipements Lourds", href: "/equipements" },
       { label: "Solutions Complètes", href: "/logistics-solutions" },
     ]
   },
@@ -61,7 +61,7 @@ const navItems: NavItem[] = [
       { label: "Tous les Services", href: "/energy-services" },
     ]
   },
-  { label: "ÉQUIPEMENTS", href: "/equipments", hasDropdown: false },
+  { label: "ÉQUIPEMENTS", href: "/equipements", hasDropdown: false },
 ];
 
 const Header = () => {
