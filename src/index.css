@@ -323,27 +323,30 @@
   .stagger-5 { animation-delay: 0.5s; }
   .stagger-6 { animation-delay: 0.6s; }
 
-  /* WAU Gold corner decoration */
+  /* WAU Gold corner decoration - positioned top-left */
   .gold-corner {
     position: absolute;
     top: 0;
-    right: 0;
-    width: 12rem;
-    height: 12rem;
-    overflow: hidden;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 120px 120px 0 0;
+    border-color: hsl(var(--primary)) transparent transparent transparent;
+    z-index: 30;
     pointer-events: none;
   }
 
-  .gold-corner::before {
-    content: '';
-    position: absolute;
-    top: -6rem;
-    right: -6rem;
-    width: 12rem;
-    height: 12rem;
-    background: hsl(var(--primary));
-    transform: rotate(45deg);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  @media (min-width: 768px) {
+    .gold-corner {
+      border-width: 150px 150px 0 0;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .gold-corner {
+      border-width: 180px 180px 0 0;
+    }
   }
 
   /* Hover lift effect */
