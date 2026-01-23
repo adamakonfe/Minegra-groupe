@@ -19,7 +19,7 @@ const ContactBar = () => {
           </a>
           
           <a
-            href="tel:+22670206487"
+            href="tel:+22670702983"
             className="flex items-center gap-4 hover:text-primary transition-colors"
           >
             <div className="w-12 h-12 border border-primary/30 rounded-full flex items-center justify-center">
@@ -27,7 +27,7 @@ const ContactBar = () => {
             </div>
             <div>
               <span className="text-xs text-muted-foreground block">Téléphone</span>
-              <span className="font-semibold">(00226) 70 20 64 87</span>
+              <span className="font-semibold">(00226) 70 70 29 83</span>
             </div>
           </a>
           
