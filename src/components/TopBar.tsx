@@ -3,7 +3,7 @@ import { Phone, Mail, MapPin } from "lucide-react";
 const TopBar = () => {
   return (
     <div className="bg-secondary text-white py-3">
-      <div className="container-wau">
+      <div className="container-main">
         <div className="flex flex-wrap items-center justify-between gap-4">
           {/* Contact Info */}
           <div className="flex flex-wrap items-center gap-6">

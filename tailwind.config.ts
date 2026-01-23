@@ -51,11 +51,11 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        wau: {
-          gold: "hsl(var(--wau-gold))",
-          dark: "hsl(var(--wau-dark))",
-          gray: "hsl(var(--wau-gray))",
-          "light-gray": "hsl(var(--wau-light-gray))",
+        minegra: {
+          gold: "hsl(var(--minegra-gold))",
+          dark: "hsl(var(--minegra-dark))",
+          gray: "hsl(var(--minegra-gray))",
+          "light-gray": "hsl(var(--minegra-light-gray))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",

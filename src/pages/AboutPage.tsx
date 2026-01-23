@@ -8,7 +8,7 @@ const AboutPage = () => {
   return (
     <Layout>
       <div className="py-16 bg-background">
-        <div className="container-wau">
+        <div className="container-main">
           <div className="grid lg:grid-cols-3 gap-12">
             {/* Main Content */}
             <div className="lg:col-span-2">

@@ -14,7 +14,7 @@ interface PageBannerProps {
 const PageBanner = ({ title, subtitle, breadcrumb }: PageBannerProps) => {
   return (
     <div className="bg-muted py-12 text-center">
-      <div className="container-wau">
+      <div className="container-main">
         <div className="flex items-center justify-center gap-4 mb-4">
           <div className="gold-line" />
           <span className="text-primary uppercase tracking-widest text-sm font-semibold">

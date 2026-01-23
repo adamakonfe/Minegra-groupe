@@ -3,10 +3,10 @@ import { Mail, Phone, MapPin } from "lucide-react";
 const ContactBar = () => {
   return (
     <div className="bg-secondary text-secondary-foreground py-6">
-      <div className="container-wau">
+      <div className="container-main">
         <div className="grid md:grid-cols-3 gap-6">
           <a
-            href="mailto:contact@waudrilling.com"
+            href="mailto:contact@minegragroup.com"
             className="flex items-center gap-4 hover:text-primary transition-colors"
           >
             <div className="w-12 h-12 border border-primary/30 rounded-full flex items-center justify-center">
@@ -14,7 +14,7 @@ const ContactBar = () => {
             </div>
             <div>
               <span className="text-xs text-muted-foreground block">Email</span>
-              <span className="font-semibold">contact@waudrilling.com</span>
+              <span className="font-semibold">contact@minegragroup.com</span>
             </div>
           </a>
           

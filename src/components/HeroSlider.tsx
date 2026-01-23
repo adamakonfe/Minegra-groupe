@@ -72,7 +72,7 @@ const HeroSlider = () => {
               index === currentSlide ? "scale-110" : "scale-100"
             }`}
           />
-          {/* Gradient Overlay - WAU Style */}
+          {/* Gradient Overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
         </div>
@@ -81,7 +81,7 @@ const HeroSlider = () => {
 
       {/* Content */}
       <div className="absolute inset-0 z-20 flex items-center">
-        <div className="container-wau">
+        <div className="container-main">
           <div className="max-w-4xl">
             {slides.map((slide, index) => (
               <div
@@ -107,14 +107,14 @@ const HeroSlider = () => {
                       </span>
                     </h1>
 
-                    {/* Buttons - WAU Style */}
+                    {/* Buttons */}
                     <div 
                       className="flex flex-wrap gap-4 animate-fade-in" 
                       style={{ animationDelay: '0.4s' }}
                     >
                       <Link 
                         to={slide.link} 
-                        className="btn-primary btn-wau flex items-center gap-3 group"
+                        className="btn-primary btn-animated flex items-center gap-3 group"
                       >
                         <span>Voir Plus</span>
                         <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-2" />
@@ -135,7 +135,7 @@ const HeroSlider = () => {
         </div>
       </div>
 
-      {/* Slide Indicators - WAU style vertical dots */}
+      {/* Slide Indicators - vertical dots */}
       <div className="absolute right-8 top-1/2 -translate-y-1/2 z-20 flex flex-col gap-4">
         {slides.map((_, index) => (
           <button
@@ -169,7 +169,7 @@ const HeroSlider = () => {
         <span className="text-lg text-white/60">0{slides.length}</span>
       </div>
 
-      {/* Scroll Down Button - WAU style */}
+      {/* Scroll Down Button */}
       <button
         onClick={scrollToAbout}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 w-14 h-14 border-2 border-white/30 rounded-full flex items-center justify-center transition-all duration-300 hover:border-primary hover:bg-primary/10 group"

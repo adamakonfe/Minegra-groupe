@@ -32,7 +32,7 @@ const EquipmentsPage = () => {
       <PageBanner title="Gamme Variée D'équipements" subtitle="MINEGRA GROUP" />
       
       <div className="py-16 bg-background">
-        <div className="container-wau">
+        <div className="container-main">
           <ScrollAnimation animation="fade-up">
             <div className="text-center mb-12">
               <div className="section-subtitle flex items-center justify-center gap-3 mb-4">
