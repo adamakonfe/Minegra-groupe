@@ -34,8 +34,8 @@ const Footer = () => {
                 </div>
                 <div className="pr-6">
                   <p className="text-white/70 text-sm">Téléphone</p>
-                  <a href="tel:+22670206487" className="text-white font-semibold text-lg hover:text-primary transition-colors">
-                    (00226) 70 20 64 87
+                  <a href="tel:+22670702983" className="text-white font-semibold text-lg hover:text-primary transition-colors">
+                    (00226) 70 70 29 83
                   </a>
                 </div>
               </div>

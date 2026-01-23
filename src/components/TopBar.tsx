@@ -8,19 +8,11 @@ const TopBar = () => {
           {/* Contact Info */}
           <div className="flex flex-wrap items-center gap-6">
             {/* Phone 1 */}
-            <a href="tel:+22625409006" className="flex items-center gap-3 group">
+            <a href="tel:+22670702983" className="flex items-center gap-3 group">
               <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center transition-all duration-300 group-hover:scale-110">
                 <Phone className="w-5 h-5 text-black" />
               </div>
-              <span className="hidden sm:inline text-sm font-medium text-white">(00226) 25 40 90 06</span>
-            </a>
-            
-            {/* Phone 2 */}
-            <a href="tel:+22670206487" className="flex items-center gap-3 group">
-              <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center transition-all duration-300 group-hover:scale-110">
-                <Phone className="w-5 h-5 text-black" />
-              </div>
-              <span className="hidden sm:inline text-sm font-medium text-white">(00226) 70 20 64 87</span>
+              <span className="hidden sm:inline text-sm font-medium text-white">(00226) 70 70 29 83</span>
             </a>
             
             {/* Email */}

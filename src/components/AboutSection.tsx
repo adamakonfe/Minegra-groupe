@@ -82,13 +82,13 @@ const AboutSection = () => {
                     Nous contacter :
                   </span>
                   <a
-                    href="tel:+22670206487"
+                    href="tel:+22670702983"
                     className="flex items-center gap-4 text-xl font-bold hover:text-primary transition-all duration-300"
                   >
                     <div className="w-14 h-14 rounded-full bg-primary flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg pulse-glow">
                       <Phone className="w-6 h-6 text-primary-foreground" />
                     </div>
-                    <span>(00226) 70 20 64 87</span>
+                    <span>(00226) 70 70 29 83</span>
                   </a>
                 </div>
 

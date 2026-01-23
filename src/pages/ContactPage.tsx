@@ -44,8 +44,8 @@ const ContactPage = () => {
                     </div>
                     <div>
                       <span className="text-primary text-sm block">Nous Appeler</span>
-                      <a href="tel:+22625409006" className="font-semibold text-lg hover:text-primary transition-colors">
-                        (+226) 25 40 90 06
+                      <a href="tel:+22670702983" className="font-semibold text-lg hover:text-primary transition-colors">
+                        (+226) 70 70 29 83
                       </a>
                     </div>
                   </div>
