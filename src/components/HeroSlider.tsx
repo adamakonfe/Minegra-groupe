@@ -78,8 +78,6 @@ const HeroSlider = () => {
         </div>
       ))}
 
-      {/* Gold Corner Decoration - WAU style triangle top-left */}
-      <div className="gold-corner" />
 
       {/* Content */}
       <div className="absolute inset-0 z-20 flex items-center">
