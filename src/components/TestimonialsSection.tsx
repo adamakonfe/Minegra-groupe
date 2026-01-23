@@ -65,7 +65,7 @@ const TestimonialsSection = () => {
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary rounded-full blur-3xl transform translate-x-1/2 translate-y-1/2" />
       </div>
 
-      <div className="container-wau relative z-10">
+      <div className="container-main relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
           <span className="inline-block text-primary font-semibold text-sm tracking-[0.3em] uppercase mb-4 animate-fade-in">

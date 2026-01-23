@@ -43,7 +43,7 @@ const MiningServicePage = () => {
       />
       
       <section className="py-16 lg:py-24">
-        <div className="container-wau">
+        <div className="container-main">
           <div className="grid lg:grid-cols-3 gap-12">
             <div className="lg:col-span-2">
               <ScrollAnimation animation="fade-up" duration={600}>

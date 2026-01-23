@@ -6,9 +6,9 @@ import { ScrollAnimation } from "@/hooks/useScrollAnimation";
 const AboutSection = () => {
   return (
     <section id="about" className="py-20 lg:py-28 bg-background overflow-hidden">
-      <div className="container-wau">
+      <div className="container-main">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Image Side - WAU Style */}
+          {/* Image Side */}
           <ScrollAnimation animation="fade-right" duration={800}>
             <div className="relative group">
               {/* Main Image */}
@@ -22,7 +22,7 @@ const AboutSection = () => {
                 <div className="absolute bottom-0 left-0 w-2 h-full bg-primary transform origin-bottom transition-all duration-700 group-hover:h-1/2" />
               </div>
               
-              {/* Decorative elements - WAU style */}
+              {/* Decorative elements */}
               <div className="absolute -bottom-8 -right-8 w-48 h-48 bg-primary/10 hidden lg:block transition-all duration-500 group-hover:bg-primary/20" />
               <div className="absolute -top-8 -left-8 w-32 h-32 border-4 border-primary hidden lg:block transition-all duration-700 group-hover:scale-110 group-hover:rotate-3" />
               
@@ -32,7 +32,7 @@ const AboutSection = () => {
             </div>
           </ScrollAnimation>
 
-          {/* Content Side - WAU Style */}
+          {/* Content Side */}
           <ScrollAnimation animation="fade-left" duration={800} delay={200}>
             <div className="lg:pl-8">
               {/* Section Label */}
@@ -43,7 +43,7 @@ const AboutSection = () => {
                 </span>
               </div>
 
-              {/* Title - WAU Style */}
+              {/* Title */}
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold leading-tight mb-8">
                 Un Service<br />
                 <span className="text-primary">Professionnel</span>
@@ -56,7 +56,7 @@ const AboutSection = () => {
                 Avec des décennies d'expérience en Afrique de l'Ouest, nous offrons l'excellence à chaque étape.
               </p>
 
-              {/* CEO Info Card - WAU Style */}
+              {/* CEO Info Card */}
               <div className="flex items-center gap-6 mb-10 p-5 bg-muted hover-lift cursor-pointer">
                 <div className="relative">
                   <img
@@ -95,7 +95,7 @@ const AboutSection = () => {
                 {/* CTA Button */}
                 <Link 
                   to="/about" 
-                  className="btn-primary btn-wau flex items-center gap-3 group"
+                  className="btn-primary btn-animated flex items-center gap-3 group"
                 >
                   <span>Voir Plus</span>
                   <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-2" />

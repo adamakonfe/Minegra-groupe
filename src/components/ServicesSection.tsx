@@ -54,8 +54,8 @@ const ServicesSection = () => {
         />
       </div>
 
-      <div className="container-wau relative z-10">
-        {/* Section Header - WAU Style */}
+      <div className="container-main relative z-10">
+        {/* Section Header */}
         <ScrollAnimation animation="fade-up" duration={600}>
           <div className="text-center mb-16">
             <div className="flex items-center justify-center gap-4 mb-6">
@@ -71,7 +71,7 @@ const ServicesSection = () => {
           </div>
         </ScrollAnimation>
 
-        {/* Services Grid - WAU Style Cards */}
+        {/* Services Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => (
             <ScrollAnimation 
@@ -133,7 +133,7 @@ const ServicesSection = () => {
           <div className="text-center mt-16">
             <Link 
               to="/mining-service" 
-              className="btn-primary btn-wau inline-flex items-center gap-3 group"
+              className="btn-primary btn-animated inline-flex items-center gap-3 group"
             >
               <span>Voir Tous Nos Services</span>
               <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-2" />

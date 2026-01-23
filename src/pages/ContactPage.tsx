@@ -26,7 +26,7 @@ const ContactPage = () => {
 
       {/* Contact Cards */}
       <div className="py-16 bg-background">
-        <div className="container-wau">
+        <div className="container-main">
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             {/* Call Card */}
             <ScrollAnimation animation="fade-up" delay={0}>
@@ -106,7 +106,7 @@ const ContactPage = () => {
 
       {/* Contact Form Section */}
       <div className="py-16 bg-muted">
-        <div className="container-wau">
+        <div className="container-main">
           <ScrollAnimation animation="fade-up">
             <div className="text-center mb-12">
               <div className="section-subtitle flex items-center justify-center gap-3 mb-4">

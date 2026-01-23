@@ -9,7 +9,7 @@ const Footer = () => {
     <footer id="contact">
       {/* Contact Bar with Arrow Shapes */}
       <div className="bg-secondary relative">
-        <div className="container-wau py-8">
+        <div className="container-main py-8">
           <div className="flex flex-wrap items-center justify-center gap-0">
             {/* Email Section */}
             <div className="flex items-center">
@@ -59,7 +59,7 @@ const Footer = () => {
 
       {/* Copyright Bar */}
       <div className="bg-primary py-4 relative">
-        <div className="container-wau">
+        <div className="container-main">
           <div className="flex items-center justify-center">
             <p className="text-black font-semibold text-sm uppercase tracking-wide">
               COPYRIGHT©{new Date().getFullYear()} MINEGRA GROUP. CONCEPTION ET HÉBERGEMENT: KAAY GROUP SARL

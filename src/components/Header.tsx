@@ -99,8 +99,8 @@ const Header = () => {
 
   return (
     <header className={`bg-white sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'shadow-lg' : ''}`}>
-      <div className="container-wau">
-        {/* Single Row Navigation - WAU Style */}
+      <div className="container-main">
+        {/* Single Row Navigation */}
         <div className="flex items-center justify-between py-4">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group flex-shrink-0">
