@@ -9,22 +9,22 @@ import service1 from "@/assets/service-1.jpeg";
 
 const services = [
   {
-    title: "Grade Control",
+    title: "Contrôle de Teneur",
     description: "Contrôle précis de la teneur pour optimiser l'extraction minière.",
     image: drill1,
   },
   {
-    title: "Drill and Blast",
+    title: "Forage et Dynamitage",
     description: "Services de forage et dynamitage pour les opérations minières.",
     image: drill2,
   },
   {
-    title: "Reverse Circulation",
+    title: "Circulation Inverse",
     description: "Forage à circulation inverse pour l'exploration et la production.",
     image: service1,
   },
   {
-    title: "Diamond Drilling",
+    title: "Forage au Diamant",
     description: "Forage au diamant pour les échantillons de haute qualité.",
     image: drill1,
   },

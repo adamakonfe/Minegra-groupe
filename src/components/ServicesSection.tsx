@@ -9,7 +9,7 @@ import { ScrollAnimation } from "@/hooks/useScrollAnimation";
 const services = [
   {
     id: 1,
-    title: "MINING SERVICE",
+    title: "SERVICE MINIER",
     subtitle: "Opérations Minières",
     description: "Services professionnels d'opérations minières avec équipements de pointe et personnel expérimenté.",
     image: service2,
@@ -17,7 +17,7 @@ const services = [
   },
   {
     id: 2,
-    title: "LOGISTICS SOLUTIONS",
+    title: "SOLUTIONS LOGISTIQUES",
     subtitle: "Transport & Logistique",
     description: "Solutions complètes de transport et logistique pour les opérations minières en Afrique de l'Ouest.",
     image: service3,
@@ -25,15 +25,15 @@ const services = [
   },
   {
     id: 3,
-    title: "ENERGY SUPPLY",
-    subtitle: "Approvisionnement Énergétique",
+    title: "APPROVISIONNEMENT ÉNERGÉTIQUE",
+    subtitle: "Énergie & Services",
     description: "Solutions énergétiques fiables pour maintenir vos opérations en fonctionnement optimal.",
     image: mining1,
     href: "/energy-services",
   },
   {
     id: 4,
-    title: "CONSULTING",
+    title: "CONSEIL",
     subtitle: "Conseil & Expertise",
     description: "Services de conseil expert pour les projets miniers, de l'exploration à la production.",
     image: service1,

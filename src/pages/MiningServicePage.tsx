@@ -10,23 +10,23 @@ import { ScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const services = [
   {
-    title: "Grade Control",
-    description: "Precise grade control services to optimize mineral extraction and maximize ore recovery.",
+    title: "Contrôle de Teneur",
+    description: "Services de contrôle de teneur précis pour optimiser l'extraction minière et maximiser la récupération du minerai.",
     image: drill1,
   },
   {
-    title: "Drill & Blast",
-    description: "Professional drilling and blasting operations for mining and quarry projects.",
+    title: "Forage & Dynamitage",
+    description: "Opérations professionnelles de forage et dynamitage pour les projets miniers et de carrière.",
     image: drill2,
   },
   {
-    title: "Reverse Circulation",
-    description: "RC drilling for exploration and production with high sample quality.",
+    title: "Circulation Inverse",
+    description: "Forage RC pour l'exploration et la production avec des échantillons de haute qualité.",
     image: mining1,
   },
   {
-    title: "Diamond Drilling",
-    description: "Core drilling services for geological exploration and resource evaluation.",
+    title: "Forage au Diamant",
+    description: "Services de carottage pour l'exploration géologique et l'évaluation des ressources.",
     image: mining2,
   },
 ];
@@ -35,10 +35,10 @@ const MiningServicePage = () => {
   return (
     <Layout>
       <PageBanner 
-        title="MINING SERVICE" 
+        title="SERVICE MINIER" 
         breadcrumb={[
-          { label: "Home", href: "/" },
-          { label: "Mining Service" },
+          { label: "Accueil", href: "/" },
+          { label: "Service Minier" },
         ]} 
       />
       
@@ -49,16 +49,16 @@ const MiningServicePage = () => {
               <ScrollAnimation animation="fade-up" duration={600}>
                 <div className="section-subtitle flex items-center gap-3">
                   <div className="gold-line" />
-                  OUR MINING SERVICES
+                  NOS SERVICES MINIERS
                 </div>
                 <h2 className="section-title mb-6">
-                  Complete <span className="text-primary">Mining Solutions</span>
+                  Solutions <span className="text-primary">Minières Complètes</span>
                 </h2>
                 
                 <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
-                  MINEGRA GROUP provides comprehensive mining services across West Africa. 
-                  From exploration drilling to full-scale mining operations, our experienced 
-                  team delivers excellence at every stage of your mining project.
+                  MINEGRA GROUP fournit des services miniers complets en Afrique de l'Ouest. 
+                  Du forage d'exploration aux opérations minières à grande échelle, notre équipe 
+                  expérimentée assure l'excellence à chaque étape de votre projet minier.
                 </p>
               </ScrollAnimation>
 
@@ -83,14 +83,14 @@ const MiningServicePage = () => {
               </div>
 
               <ScrollAnimation animation="fade-up" duration={600}>
-                <h3 className="font-heading font-bold text-2xl mb-4">Why Choose Us</h3>
+                <h3 className="font-heading font-bold text-2xl mb-4">Pourquoi Nous Choisir</h3>
                 <ul className="space-y-3 mb-8">
                   {[
-                    "State-of-the-art drilling equipment",
-                    "Highly qualified and experienced personnel",
-                    "Strict safety and environmental standards",
-                    "Accurate and timely results",
-                    "24/7 operational support",
+                    "Équipements de forage de pointe",
+                    "Personnel hautement qualifié et expérimenté",
+                    "Normes strictes de sécurité et d'environnement",
+                    "Résultats précis et dans les délais",
+                    "Support opérationnel 24/7",
                   ].map((item, index) => (
                     <li key={index} className="flex items-center gap-3">
                       <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
@@ -100,7 +100,7 @@ const MiningServicePage = () => {
                 </ul>
 
                 <a href="/contacts" className="btn-primary inline-flex items-center gap-2">
-                  Request a Quote
+                  Demander un Devis
                   <ArrowRight className="w-4 h-4" />
                 </a>
               </ScrollAnimation>
