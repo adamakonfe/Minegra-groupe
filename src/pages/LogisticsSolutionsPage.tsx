@@ -32,10 +32,10 @@ const LogisticsSolutionsPage = () => {
   return (
     <Layout>
       <PageBanner 
-        title="LOGISTICS SOLUTIONS" 
+        title="SOLUTIONS LOGISTIQUES" 
         breadcrumb={[
           { label: "Accueil", href: "/" },
-          { label: "Logistics Solutions" },
+          { label: "Solutions Logistiques" },
         ]} 
       />
       

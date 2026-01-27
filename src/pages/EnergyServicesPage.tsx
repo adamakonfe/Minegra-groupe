@@ -32,10 +32,10 @@ const EnergyServicesPage = () => {
   return (
     <Layout>
       <PageBanner 
-        title="ENERGY SUPPLY & SERVICES" 
+        title="APPROVISIONNEMENT ÉNERGÉTIQUE" 
         breadcrumb={[
           { label: "Accueil", href: "/" },
-          { label: "Energy Supply & Services" },
+          { label: "Approvisionnement Énergétique" },
         ]} 
       />
       

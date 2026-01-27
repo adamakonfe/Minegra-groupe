@@ -3,10 +3,10 @@ import { Link, useLocation } from "react-router-dom";
 
 const sidebarLinks = [
   { label: "Accueil", href: "/" },
-  { label: "A propos", href: "/nous" },
-  { label: "Mining Service", href: "/mining-service" },
-  { label: "Logistics Solutions", href: "/logistics-solutions" },
-  { label: "Energy Supply", href: "/energy-services" },
+  { label: "À propos", href: "/nous" },
+  { label: "Service Minier", href: "/mining-service" },
+  { label: "Solutions Logistiques", href: "/logistics-solutions" },
+  { label: "Approvisionnement Énergétique", href: "/energy-services" },
   { label: "Notre équipe", href: "/equipe" },
   { label: "Nos équipements", href: "/equipements" },
 ];
@@ -55,12 +55,12 @@ const Sidebar = ({ showContact = true }: SidebarProps) => {
           
           <div className="space-y-4 text-left">
             <div>
-              <span className="text-xs text-secondary-foreground/60 uppercase tracking-wider">MOBILE</span>
+              <span className="text-xs text-secondary-foreground/60 uppercase tracking-wider">TÉLÉPHONE</span>
               <a 
-                href="tel:+22670000000" 
+                href="tel:+22670702983" 
                 className="block text-primary font-semibold hover:underline"
               >
-                +226 70 00 00 00
+                (00226) 70 70 29 83
               </a>
             </div>
             <div>

@@ -29,7 +29,7 @@ const navItems: NavItem[] = [
     ]
   },
   { 
-    label: "MINING SERVICE", 
+    label: "SERVICE MINIER", 
     href: "/mining-service", 
     hasDropdown: true,
     dropdownItems: [
@@ -40,7 +40,7 @@ const navItems: NavItem[] = [
     ]
   },
   { 
-    label: "LOGISTICS", 
+    label: "LOGISTIQUE", 
     href: "/logistics-solutions", 
     hasDropdown: true,
     dropdownItems: [
@@ -51,7 +51,7 @@ const navItems: NavItem[] = [
     ]
   },
   { 
-    label: "ENERGY", 
+    label: "ÉNERGIE", 
     href: "/energy-services", 
     hasDropdown: true,
     dropdownItems: [
