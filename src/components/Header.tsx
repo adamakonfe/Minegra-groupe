@@ -40,7 +40,7 @@ const navItems: NavItem[] = [
     ]
   },
   { 
-    label: "LOGISTIQUE", 
+    label: "SOLUTIONS LOGISTIQUES", 
     href: "/logistics-solutions", 
     hasDropdown: true,
     dropdownItems: [
@@ -51,7 +51,7 @@ const navItems: NavItem[] = [
     ]
   },
   { 
-    label: "ÉNERGIE", 
+    label: "APPROVISIONNEMENT ÉNERGÉTIQUE", 
     href: "/energy-services", 
     hasDropdown: true,
     dropdownItems: [
