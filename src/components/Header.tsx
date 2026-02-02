@@ -17,18 +17,7 @@ interface NavItem {
 
 const navItems: NavItem[] = [
   { label: "ACCUEIL", href: "/", hasDropdown: false },
-  { 
-    label: "A PROPOS", 
-    href: "/nous", 
-    hasDropdown: true,
-    dropdownItems: [
-      { label: "Notre Histoire", href: "/nous" },
-      { label: "Notre Équipe", href: "/equipe" },
-      { label: "Nos Valeurs", href: "/nous#values" },
-      { label: "Carrières", href: "/carriere" },
-    ]
-  },
-  { 
+  {
     label: "SERVICE MINIER", 
     href: "/mining-service", 
     hasDropdown: true,
