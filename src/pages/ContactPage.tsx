@@ -1,3 +1,4 @@
+import emailjs from '@emailjs/browser';
 import { useState } from "react";
 import { Phone, Mail, MapPin, User, Send } from "lucide-react";
 import Layout from "@/components/Layout";
@@ -12,12 +13,34 @@ const ContactPage = () => {
     email: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    alert("Message envoyé !");
-    setFormData({ name: "", email: "", message: "" });
+    setIsSubmitting(true);
+
+    try {
+      // TODO: Remplace ces identifiants par ceux que tu vas obtenir sur ton compte EmailJS (https://www.emailjs.com/)
+      const serviceId = "VOTRE_SERVICE_ID";
+      const templateId = "VOTRE_TEMPLATE_ID";
+      const publicKey = "VOTRE_PUBLIC_KEY";
+
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message,
+      };
+
+      await emailjs.send(serviceId, templateId, templateParams, publicKey);
+
+      alert("Votre message a été envoyé avec succès !");
+      setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+      console.error("Erreur lors de l'envoi du message :", error);
+      alert("Une erreur est survenue. Veuillez vérifier vos identifiants EmailJS ou réessayer plus tard.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -155,8 +178,12 @@ const ContactPage = () => {
                 />
               </div>
               <div className="text-center">
-                <button type="submit" className="btn-primary inline-flex items-center gap-2">
-                  Envoyer
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className={`btn-primary inline-flex items-center gap-2 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
+                >
+                  {isSubmitting ? "Envoi en cours..." : "Envoyer"}
                   <Send className="w-4 h-4" />
                 </button>
               </div>
