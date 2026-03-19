@@ -61,16 +61,14 @@ const HeroSlider = () => {
       {slides.map((slide, index) => (
         <div
           key={slide.id}
-          className={`hero-slide ${
-            index === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0"
-          }`}
+          className={`hero-slide ${index === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0"
+            }`}
         >
           <img
             src={slide.image}
             alt={slide.title.join(" ")}
-            className={`w-full h-full object-cover transition-transform duration-[8000ms] ease-out ${
-              index === currentSlide ? "scale-110" : "scale-100"
-            }`}
+            className={`w-full h-full object-cover transition-transform duration-[8000ms] ease-out ${index === currentSlide ? "scale-110" : "scale-100"
+              }`}
           />
           {/* Gradient Overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
@@ -86,11 +84,10 @@ const HeroSlider = () => {
             {slides.map((slide, index) => (
               <div
                 key={slide.id}
-                className={`transition-all duration-700 ease-out ${
-                  index === currentSlide && !isAnimating
-                    ? "opacity-100 translate-y-0"
-                    : "opacity-0 translate-y-12 absolute pointer-events-none"
-                }`}
+                className={`transition-all duration-700 ease-out ${index === currentSlide && !isAnimating
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-12 absolute pointer-events-none"
+                  }`}
               >
                 {index === currentSlide && (
                   <>
@@ -99,8 +96,8 @@ const HeroSlider = () => {
                       <span className="text-primary block animate-fade-in">
                         {slide.title[0]}
                       </span>
-                      <span 
-                        className="text-white block animate-fade-in" 
+                      <span
+                        className="text-white block animate-fade-in"
                         style={{ animationDelay: '0.2s' }}
                       >
                         {slide.title[1]}
@@ -108,19 +105,19 @@ const HeroSlider = () => {
                     </h1>
 
                     {/* Buttons */}
-                    <div 
-                      className="flex flex-wrap gap-4 animate-fade-in" 
+                    <div
+                      className="flex flex-wrap gap-4 animate-fade-in"
                       style={{ animationDelay: '0.4s' }}
                     >
-                      <Link 
-                        to={slide.link} 
+                      <Link
+                        to={slide.link}
                         className="btn-primary btn-animated flex items-center gap-3 group"
                       >
                         <span>Voir Plus</span>
                         <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-2" />
                       </Link>
-                      <Link 
-                        to="/contacts" 
+                      <Link
+                        to="/contacts"
                         className="btn-outline flex items-center gap-3 group"
                       >
                         <span>Nous Contacter</span>
@@ -141,11 +138,10 @@ const HeroSlider = () => {
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`relative w-4 h-4 rounded-full border-2 transition-all duration-300 ${
-              index === currentSlide
-                ? "border-primary bg-primary scale-125"
-                : "border-white/60 bg-transparent hover:border-white hover:scale-110"
-            }`}
+            className={`relative w-4 h-4 rounded-full border-2 transition-all duration-300 ${index === currentSlide
+              ? "border-primary bg-primary scale-125"
+              : "border-white/60 bg-transparent hover:border-white hover:scale-110"
+              }`}
             aria-label={`Aller à la diapositive ${index + 1}`}
           >
             {index === currentSlide && (
@@ -161,7 +157,7 @@ const HeroSlider = () => {
           0{currentSlide + 1}
         </span>
         <div className="w-16 h-0.5 bg-white/30">
-          <div 
+          <div
             className="h-full bg-primary transition-all duration-300"
             style={{ width: `${((currentSlide + 1) / slides.length) * 100}%` }}
           />

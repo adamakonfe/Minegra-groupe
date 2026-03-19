@@ -70,7 +70,7 @@ const ContactPage = () => {
                     <div>
                       <span className="text-primary text-sm block">Nous Écrire</span>
                       <a href="mailto:contact@minegragroup.com" className="font-semibold text-lg hover:text-primary transition-colors">
-                        contact@minegragroup.com
+                        info@Minegragroup.com
                       </a>
                     </div>
                   </div>

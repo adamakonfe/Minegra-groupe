@@ -18,9 +18,9 @@ interface NavItem {
 const navItems: NavItem[] = [
   { label: "ACCUEIL", href: "/", hasDropdown: false },
   {
-    label: "SERVICE MINIER", 
-    href: "/mining-service", 
-    hasDropdown: true,
+    label: "SERVICES MINIERS",
+    href: "/mining-service",
+    hasDropdown: false,
     dropdownItems: [
       { label: "Forage & Sondage", href: "/forage" },
       { label: "Exploitation Minière", href: "/mine" },
@@ -28,10 +28,10 @@ const navItems: NavItem[] = [
       { label: "Tous les Services", href: "/mining-service" },
     ]
   },
-  { 
-    label: "SOLUTIONS LOGISTIQUES", 
-    href: "/logistics-solutions", 
-    hasDropdown: true,
+  {
+    label: "SOLUTIONS LOGISTIQUES",
+    href: "/logistics-solutions",
+    hasDropdown: false,
     dropdownItems: [
       { label: "Transport de Marchandises", href: "/logistique" },
       { label: "Gestion de Flotte", href: "/logistics-solutions" },
@@ -39,10 +39,10 @@ const navItems: NavItem[] = [
       { label: "Solutions Complètes", href: "/logistics-solutions" },
     ]
   },
-  { 
-    label: "APPROVISIONNEMENT ÉNERGÉTIQUE", 
-    href: "/energy-services", 
-    hasDropdown: true,
+  {
+    label: "APPROVISIONNEMENT ÉNERGÉTIQUE",
+    href: "/energy-services",
+    hasDropdown: false,
     dropdownItems: [
       { label: "Énergie Solaire", href: "/energie" },
       { label: "Groupes Électrogènes", href: "/energy-services" },
@@ -88,22 +88,22 @@ const Header = () => {
 
   return (
     <header className={`bg-white sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'shadow-lg' : ''}`}>
-      <div className="container-main">
+      <div className="w-full px-4 sm:px-8 lg:px-12">
         {/* Single Row Navigation */}
         <div className="flex items-center justify-between py-4">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group flex-shrink-0">
-            <img 
-              src={minegraLogo} 
-              alt="MINEGRA GROUP" 
-              className="h-14 lg:h-16 w-auto transition-transform duration-300 group-hover:scale-105" 
+            <img
+              src={minegraLogo}
+              alt="MINEGRA GROUP"
+              className="h-14 lg:h-16 w-auto transition-transform duration-300 group-hover:scale-105"
             />
           </Link>
 
           {/* Desktop Navigation - All in one row */}
-          <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
+          <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
             {navItems.map((item) => (
-              <div 
+              <div
                 key={item.label}
                 className="relative"
                 onMouseEnter={() => item.hasDropdown && handleMouseEnter(item.label)}
@@ -111,11 +111,10 @@ const Header = () => {
               >
                 <Link
                   to={item.href}
-                  className={`flex items-center gap-1 px-3 xl:px-4 py-2 text-sm font-bold tracking-wide uppercase transition-all duration-300 relative ${
-                    location.pathname === item.href 
-                      ? 'text-black after:absolute after:bottom-0 after:left-3 after:right-3 after:h-0.5 after:bg-primary' 
-                      : 'text-black hover:text-black/70'
-                  }`}
+                  className={`flex items-center gap-1 px-1 py-2 text-sm font-bold tracking-wide uppercase transition-all duration-300 relative ${location.pathname === item.href
+                    ? 'text-black after:absolute after:bottom-0 after:left-0 after:w-full after:h-[3px] after:bg-primary'
+                    : 'text-black hover:text-black/70'
+                    }`}
                 >
                   <span>{item.label}</span>
                   {item.hasDropdown && (
@@ -125,12 +124,11 @@ const Header = () => {
 
                 {/* Dropdown Menu */}
                 {item.hasDropdown && item.dropdownItems && (
-                  <div 
-                    className={`absolute top-full left-0 pt-2 transition-all duration-300 z-50 ${
-                      activeDropdown === item.label 
-                        ? 'opacity-100 visible translate-y-0' 
-                        : 'opacity-0 invisible -translate-y-2'
-                    }`}
+                  <div
+                    className={`absolute top-full left-0 pt-2 transition-all duration-300 z-50 ${activeDropdown === item.label
+                      ? 'opacity-100 visible translate-y-0'
+                      : 'opacity-0 invisible -translate-y-2'
+                      }`}
                   >
                     <div className="bg-white shadow-2xl min-w-[220px] border border-gray-100">
                       <div className="h-1 bg-primary w-full" />
@@ -154,8 +152,8 @@ const Header = () => {
           </nav>
 
           {/* Right Side - Search + Contact Button */}
-          <div className="hidden lg:flex items-center gap-4">
-            <button className="w-10 h-10 rounded-full border border-dashed border-gray-400 hover:border-primary hover:text-primary transition-all duration-300 flex items-center justify-center text-black">
+          <div className="hidden lg:flex items-center gap-6">
+            <button className="w-10 h-10 rounded-full border border-gray-200 hover:border-primary hover:text-primary transition-all duration-300 flex items-center justify-center text-black">
               <Search className="w-4 h-4" />
             </button>
             <Link
@@ -165,7 +163,7 @@ const Header = () => {
               <span className="inline-block skew-x-[5deg]">NOUS CONTACTER</span>
             </Link>
           </div>
-          
+
           {/* Mobile Menu Button */}
           <button
             className="lg:hidden w-12 h-12 flex items-center justify-center text-secondary hover:text-primary transition-all duration-300"
@@ -186,17 +184,15 @@ const Header = () => {
                     <>
                       <button
                         onClick={() => toggleMobileDropdown(item.label)}
-                        className={`w-full flex items-center justify-between py-3 px-2 text-sm font-bold uppercase tracking-wide transition-all duration-300 ${
-                          location.pathname === item.href ? 'text-primary' : 'text-secondary hover:text-primary'
-                        }`}
+                        className={`w-full flex items-center justify-between py-3 px-2 text-sm font-bold uppercase tracking-wide transition-all duration-300 ${location.pathname === item.href ? 'text-primary' : 'text-secondary hover:text-primary'
+                          }`}
                       >
                         <span>{item.label}</span>
                         <Plus className={`w-4 h-4 transition-transform duration-300 ${mobileExpandedItem === item.label ? 'rotate-45' : ''}`} />
                       </button>
-                      
-                      <div className={`overflow-hidden transition-all duration-300 bg-muted/50 ${
-                        mobileExpandedItem === item.label ? 'max-h-[300px]' : 'max-h-0'
-                      }`}>
+
+                      <div className={`overflow-hidden transition-all duration-300 bg-muted/50 ${mobileExpandedItem === item.label ? 'max-h-[300px]' : 'max-h-0'
+                        }`}>
                         {item.dropdownItems?.map((dropItem) => (
                           <Link
                             key={dropItem.label}
@@ -212,9 +208,8 @@ const Header = () => {
                   ) : (
                     <Link
                       to={item.href}
-                      className={`block py-3 px-2 text-sm font-bold uppercase tracking-wide transition-all duration-300 ${
-                        location.pathname === item.href ? 'text-primary' : 'text-secondary hover:text-primary'
-                      }`}
+                      className={`block py-3 px-2 text-sm font-bold uppercase tracking-wide transition-all duration-300 ${location.pathname === item.href ? 'text-primary' : 'text-secondary hover:text-primary'
+                        }`}
                       onClick={() => setIsOpen(false)}
                     >
                       {item.label}
@@ -222,9 +217,9 @@ const Header = () => {
                   )}
                 </div>
               ))}
-              <Link 
-                to="/contacts" 
-                className="bg-secondary text-secondary-foreground text-center py-3 mt-4 font-bold text-sm uppercase tracking-wide" 
+              <Link
+                to="/contacts"
+                className="bg-secondary text-secondary-foreground text-center py-3 mt-4 font-bold text-sm uppercase tracking-wide"
                 onClick={() => setIsOpen(false)}
               >
                 NOUS CONTACTER

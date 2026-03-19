@@ -3,7 +3,7 @@ import PageBanner from "@/components/PageBanner";
 import Sidebar from "@/components/Sidebar";
 import { ScrollAnimation } from "@/hooks/useScrollAnimation";
 import { ArrowRight, CheckCircle, Zap, Sun, Battery, Settings } from "lucide-react";
-import service2 from "@/assets/service-2.jpeg";
+import groupeElectrogene from "@/assets/groupe electrogene.jpg";
 
 const solutions = [
   {
@@ -31,14 +31,14 @@ const solutions = [
 const EnergyServicesPage = () => {
   return (
     <Layout>
-      <PageBanner 
-        title="APPROVISIONNEMENT ÉNERGÉTIQUE" 
+      <PageBanner
+        title="APPROVISIONNEMENT ÉNERGÉTIQUE"
         breadcrumb={[
           { label: "Accueil", href: "/" },
           { label: "Approvisionnement Énergétique" },
-        ]} 
+        ]}
       />
-      
+
       <section className="py-16 lg:py-24">
         <div className="container-main">
           <div className="grid lg:grid-cols-3 gap-12">
@@ -52,19 +52,19 @@ const EnergyServicesPage = () => {
                   Énergie pour <span className="text-primary">Opérations Minières</span>
                 </h2>
               </ScrollAnimation>
-              
+
               <ScrollAnimation animation="fade-up" delay={100}>
                 <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
-                  MINEGRA GROUP fournit des solutions énergétiques complètes pour les sites 
-                  miniers et industriels. De la fourniture de générateurs aux installations 
+                  MINEGRA GROUP fournit des solutions énergétiques complètes pour les sites
+                  miniers et industriels. De la fourniture de générateurs aux installations
                   solaires, nous garantissons une alimentation fiable pour vos opérations.
                 </p>
               </ScrollAnimation>
 
               <ScrollAnimation animation="fade-up" delay={200}>
                 <div className="img-zoom-container mb-12">
-                  <img 
-                    src={service2} 
+                  <img
+                    src={groupeElectrogene}
                     alt="Solutions énergétiques"
                     className="w-full h-80 object-cover"
                   />
@@ -109,7 +109,7 @@ const EnergyServicesPage = () => {
                 </a>
               </ScrollAnimation>
             </div>
-            
+
             <ScrollAnimation animation="fade-left">
               <Sidebar />
             </ScrollAnimation>

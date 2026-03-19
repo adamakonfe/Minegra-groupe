@@ -2,7 +2,8 @@ import { ArrowRight } from "lucide-react";
 import Layout from "@/components/Layout";
 import PageBanner from "@/components/PageBanner";
 import { ScrollAnimation } from "@/hooks/useScrollAnimation";
-import mining1 from "@/assets/mining-1.jpeg";
+import excavatrice from "@/assets/excavatrice.jpg";
+import foreuse from "@/assets/foreuse.jpg";
 import mining2 from "@/assets/mining-2.jpeg";
 import mining4 from "@/assets/mining-4.jpeg";
 import mining5 from "@/assets/mining-5.jpeg";
@@ -11,17 +12,15 @@ import diapo1 from "@/assets/diapo-1.jpeg";
 import diapo2 from "@/assets/diapo-2.jpeg";
 import diapo3 from "@/assets/diapo-3.jpeg";
 import drill1 from "@/assets/drill-1.jpeg";
-import drill2 from "@/assets/drill-2.jpeg";
 
 const equipments = [
   { image: mining6, name: "Camion Minier" },
-  { image: mining1, name: "Excavatrice" },
-  { image: mining2, name: "Foreuse" },
+  { image: excavatrice, name: "Excavatrice" },
+  { image: foreuse, name: "Foreuse" },
   { image: diapo1, name: "Chargeuse" },
   { image: diapo2, name: "Bulldozer" },
   { image: diapo3, name: "Tombereau" },
   { image: drill1, name: "Machine de Forage" },
-  { image: drill2, name: "Foreuse Rotative" },
   { image: mining4, name: "Concasseur" },
   { image: mining5, name: "Crible" },
 ];
@@ -30,7 +29,7 @@ const EquipmentsPage = () => {
   return (
     <Layout>
       <PageBanner title="Gamme Variée D'équipements" subtitle="MINEGRA GROUP" />
-      
+
       <div className="py-16 bg-background">
         <div className="container-main">
           <ScrollAnimation animation="fade-up">

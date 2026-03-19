@@ -3,7 +3,7 @@ import PageBanner from "@/components/PageBanner";
 import Sidebar from "@/components/Sidebar";
 import { ScrollAnimation } from "@/hooks/useScrollAnimation";
 import { ArrowRight, CheckCircle, Truck, Package, Clock, Shield } from "lucide-react";
-import heroTruck from "@/assets/hero-truck.jpg";
+import heroBoat from "@/assets/bateau.jpg";
 
 const features = [
   {
@@ -65,9 +65,9 @@ const LogisticsSolutionsPage = () => {
               <ScrollAnimation animation="fade-up" delay={200}>
                 <div className="img-zoom-container mb-12">
                   <img 
-                    src={heroTruck} 
+                    src={heroBoat} 
                     alt="Logistique minière"
-                    className="w-full h-80 object-cover"
+                    className="w-full h-auto"
                   />
                 </div>
               </ScrollAnimation>

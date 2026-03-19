@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Phone, ArrowRight } from "lucide-react";
 import ceoPortrait from "@/assets/ceo-portrait.jpg";
+import miningVideo from "@/assets/Transport de Minerais.mp4";
 import { ScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const AboutSection = () => {
@@ -13,19 +14,22 @@ const AboutSection = () => {
             <div className="relative group">
               {/* Main Image */}
               <div className="relative z-10 img-zoom-container overflow-hidden">
-                <img
-                  src={ceoPortrait}
-                  alt="CEO MINEGRA GROUP"
-                  className="w-full max-w-lg mx-auto lg:mx-0 shadow-2xl"
+                <video
+                  src={miningVideo}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full max-w-lg lg:max-w-xl mx-auto lg:mx-0 h-[500px] lg:h-[600px] object-cover shadow-2xl rounded-2xl"
                 />
                 {/* Gold accent bar */}
                 <div className="absolute bottom-0 left-0 w-2 h-full bg-primary transform origin-bottom transition-all duration-700 group-hover:h-1/2" />
               </div>
-              
+
               {/* Decorative elements */}
               <div className="absolute -bottom-8 -right-8 w-48 h-48 bg-primary/10 hidden lg:block transition-all duration-500 group-hover:bg-primary/20" />
               <div className="absolute -top-8 -left-8 w-32 h-32 border-4 border-primary hidden lg:block transition-all duration-700 group-hover:scale-110 group-hover:rotate-3" />
-              
+
               {/* Gold vertical line */}
               <div className="absolute top-1/3 -right-4 w-1 h-24 bg-primary hidden lg:block" />
               <div className="absolute bottom-1/4 -right-4 w-1 h-16 bg-primary/50 hidden lg:block" />
@@ -69,7 +73,7 @@ const AboutSection = () => {
                   </div>
                 </div>
                 <div>
-                  <h4 className="font-heading font-bold text-xl text-foreground">Vincent K. OUEDRAOGO</h4>
+                  <h4 className="font-heading font-bold text-xl text-foreground">Karim KONFE</h4>
                   <span className="text-primary text-sm uppercase tracking-wider font-semibold">MINEGRA GROUP</span>
                 </div>
               </div>
@@ -93,8 +97,8 @@ const AboutSection = () => {
                 </div>
 
                 {/* CTA Button */}
-                <Link 
-                  to="/about" 
+                <Link
+                  to="/nous"
                   className="btn-primary btn-animated flex items-center gap-3 group"
                 >
                   <span>Voir Plus</span>

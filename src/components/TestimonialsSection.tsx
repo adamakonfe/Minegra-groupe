@@ -89,7 +89,7 @@ const TestimonialsSection = () => {
 
             {/* Testimonial Card */}
             <div className="bg-white/5 backdrop-blur-sm rounded-lg p-8 md:p-12 pt-16 border border-white/10">
-              <div 
+              <div
                 className={`transition-all duration-500 ${isAnimating ? 'opacity-0 transform translate-y-4' : 'opacity-100 transform translate-y-0'}`}
               >
                 {/* Quote Text */}
@@ -101,8 +101,8 @@ const TestimonialsSection = () => {
                 <div className="flex flex-col items-center">
                   <div className="relative mb-4">
                     <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-primary">
-                      <img 
-                        src={testimonials[currentIndex].image} 
+                      <img
+                        src={testimonials[currentIndex].image}
                         alt={testimonials[currentIndex].name}
                         className="w-full h-full object-cover"
                       />
@@ -125,13 +125,13 @@ const TestimonialsSection = () => {
             </div>
 
             {/* Navigation Buttons */}
-            <button 
+            <button
               onClick={prevSlide}
               className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 md:-translate-x-12 w-12 h-12 bg-primary/20 hover:bg-primary rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110 group"
             >
               <ChevronLeft className="w-6 h-6 group-hover:text-secondary" />
             </button>
-            <button 
+            <button
               onClick={nextSlide}
               className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 md:translate-x-12 w-12 h-12 bg-primary/20 hover:bg-primary rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110 group"
             >
@@ -145,11 +145,10 @@ const TestimonialsSection = () => {
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === currentIndex 
-                    ? 'bg-primary w-8' 
-                    : 'bg-white/30 hover:bg-white/50'
-                }`}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentIndex
+                  ? 'bg-primary w-8'
+                  : 'bg-white/30 hover:bg-white/50'
+                  }`}
               />
             ))}
           </div>

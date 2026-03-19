@@ -3,7 +3,7 @@ import PageBanner from "@/components/PageBanner";
 import Sidebar from "@/components/Sidebar";
 import { ScrollAnimation } from "@/hooks/useScrollAnimation";
 import { ArrowRight, CheckCircle, FileText, Users, Target, BarChart } from "lucide-react";
-import ceoPortrait from "@/assets/ceo-portrait.jpg";
+import ceoPortrait from "@/assets/team-member.jpg";
 
 const expertises = [
   {
@@ -31,15 +31,15 @@ const expertises = [
 const ConseilsPage = () => {
   return (
     <Layout>
-      <PageBanner 
-        title="CONSEILS" 
+      <PageBanner
+        title="CONSEILS"
         subtitle="MINEGRA GROUP"
         breadcrumb={[
           { label: "Accueil", href: "/" },
           { label: "Conseils" },
-        ]} 
+        ]}
       />
-      
+
       <section className="py-16 lg:py-24">
         <div className="container-main">
           <div className="grid lg:grid-cols-3 gap-12">
@@ -53,26 +53,26 @@ const ConseilsPage = () => {
                   Expertise <span className="text-primary">Minière</span>
                 </h2>
               </ScrollAnimation>
-              
+
               <ScrollAnimation animation="fade-up" delay={100}>
                 <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
-                  Fort de notre expérience dans le secteur minier, MINEGRA GROUP met à votre 
-                  disposition une équipe d'experts pour vous accompagner dans tous vos projets. 
-                  De l'étude de faisabilité à l'optimisation de vos opérations, nous sommes votre 
+                  Fort de notre expérience dans le secteur minier, MINEGRA GROUP met à votre
+                  disposition une équipe d'experts pour vous accompagner dans tous vos projets.
+                  De l'étude de faisabilité à l'optimisation de vos opérations, nous sommes votre
                   partenaire stratégique.
                 </p>
               </ScrollAnimation>
 
               <ScrollAnimation animation="fade-up" delay={200}>
                 <div className="flex flex-col md:flex-row gap-8 mb-12 p-8 bg-muted">
-                  <img 
-                    src={ceoPortrait} 
+                  <img
+                    src={ceoPortrait}
                     alt="Expert MINEGRA"
                     className="w-48 h-48 object-cover"
                   />
                   <div>
                     <blockquote className="text-lg italic mb-4">
-                      "Notre engagement est d'accompagner nos clients vers l'excellence opérationnelle, 
+                      "Notre engagement est d'accompagner nos clients vers l'excellence opérationnelle,
                       en partageant notre expertise et nos meilleures pratiques du secteur minier."
                     </blockquote>
                     <p className="font-heading font-bold">Vincent K. OUEDRAOGO</p>
@@ -123,7 +123,7 @@ const ConseilsPage = () => {
                 </a>
               </ScrollAnimation>
             </div>
-            
+
             <ScrollAnimation animation="fade-left">
               <Sidebar />
             </ScrollAnimation>

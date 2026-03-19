@@ -6,6 +6,7 @@ import { ArrowRight, CheckCircle } from "lucide-react";
 import drill1 from "@/assets/drill-1.jpeg";
 import drill2 from "@/assets/drill-2.jpeg";
 import service1 from "@/assets/service-1.jpeg";
+import reverseCirculation from "@/assets/reverse-circulation.jpeg";
 
 const services = [
   {
@@ -21,7 +22,7 @@ const services = [
   {
     title: "Circulation Inverse",
     description: "Forage à circulation inverse pour l'exploration et la production.",
-    image: service1,
+    image: reverseCirculation,
   },
   {
     title: "Forage au Diamant",
@@ -33,15 +34,15 @@ const services = [
 const ForagePage = () => {
   return (
     <Layout>
-      <PageBanner 
-        title="FORAGE" 
+      <PageBanner
+        title="FORAGE"
         subtitle="MINEGRA GROUP"
         breadcrumb={[
           { label: "Accueil", href: "/" },
           { label: "Forage" },
-        ]} 
+        ]}
       />
-      
+
       <section className="py-16 lg:py-24">
         <div className="container-main">
           <div className="grid lg:grid-cols-3 gap-12">
@@ -55,11 +56,11 @@ const ForagePage = () => {
                   Expertise en <span className="text-primary">Forage Minier</span>
                 </h2>
               </ScrollAnimation>
-              
+
               <ScrollAnimation animation="fade-up" delay={100}>
                 <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
-                  MINEGRA GROUP offre une gamme complète de services de forage adaptés aux besoins 
-                  de l'industrie minière. Notre équipe d'experts utilise des équipements de pointe 
+                  MINEGRA GROUP offre une gamme complète de services de forage adaptés aux besoins
+                  de l'industrie minière. Notre équipe d'experts utilise des équipements de pointe
                   pour garantir des résultats précis et fiables.
                 </p>
               </ScrollAnimation>
@@ -68,8 +69,8 @@ const ForagePage = () => {
                 {services.map((service, index) => (
                   <ScrollAnimation key={index} animation="fade-up" delay={index * 100}>
                     <div className="group bg-muted p-6 hover:bg-secondary hover:text-secondary-foreground transition-all duration-300">
-                      <img 
-                        src={service.image} 
+                      <img
+                        src={service.image}
                         alt={service.title}
                         className="w-full h-48 object-cover mb-4 transition-transform duration-500 group-hover:scale-105"
                       />
@@ -107,7 +108,7 @@ const ForagePage = () => {
                 </a>
               </ScrollAnimation>
             </div>
-            
+
             <ScrollAnimation animation="fade-left">
               <Sidebar />
             </ScrollAnimation>

@@ -4,7 +4,7 @@ import { Calendar, Users, Award, Globe, Truck, HardHat } from "lucide-react";
 const stats = [
   {
     icon: Calendar,
-    value: 15,
+    value: 5,
     suffix: "+",
     label: "Années d'Expérience",
     description: "D'expertise dans le secteur minier",
@@ -51,12 +51,12 @@ const AnimatedCounter = ({ target, suffix, inView }: { target: number; suffix: s
 
   useEffect(() => {
     if (!inView) return;
-    
+
     const duration = 2000;
     const steps = 60;
     const increment = target / steps;
     let current = 0;
-    
+
     const timer = setInterval(() => {
       current += increment;
       if (current >= target) {
@@ -100,14 +100,14 @@ const StatsSection = () => {
   }, []);
 
   return (
-    <section 
+    <section
       ref={sectionRef}
       className="py-20 lg:py-32 bg-gradient-to-br from-muted via-background to-muted relative overflow-hidden"
     >
       {/* Decorative Elements */}
       <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-transparent via-primary to-transparent" />
       <div className="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-transparent via-primary to-transparent" />
-      
+
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 left-10 w-72 h-72 border border-primary rounded-full" />
@@ -126,14 +126,14 @@ const StatsSection = () => {
           </h2>
           <div className="w-24 h-1 bg-primary mx-auto mb-6" />
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            Depuis plus de 15 ans, MINEGRA GROUP s'engage à fournir des services de qualité exceptionnelle dans le secteur minier africain.
+            Depuis plus de 5 ans, MINEGRA GROUP s'engage à fournir des services de qualité exceptionnelle dans le secteur minier africain.
           </p>
         </div>
 
         {/* Stats Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-4">
           {stats.map((stat, index) => (
-            <div 
+            <div
               key={stat.label}
               className={`group relative bg-white rounded-lg p-6 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border-b-4 border-transparent hover:border-primary ${inView ? 'animate-fade-in' : 'opacity-0'}`}
               style={{ animationDelay: `${index * 0.1}s` }}
@@ -142,7 +142,7 @@ const StatsSection = () => {
               <div className="absolute top-0 left-0 w-8 h-8 overflow-hidden">
                 <div className="absolute top-0 left-0 w-12 h-1 bg-primary transform -rotate-45 origin-top-left translate-y-4" />
               </div>
-              
+
               {/* Icon */}
               <div className="mb-4 flex justify-center">
                 <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">

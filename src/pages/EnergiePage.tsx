@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import PageBanner from "@/components/PageBanner";
 import Sidebar from "@/components/Sidebar";
 import { ArrowRight, CheckCircle, Zap, Sun, Battery, Settings } from "lucide-react";
-import service2 from "@/assets/service-2.jpeg";
+import groupeElectrogene from "@/assets/groupe electrogene.jpg";
 
 const solutions = [
   {
@@ -10,6 +10,10 @@ const solutions = [
     title: "Groupes Électrogènes",
     description: "Location et maintenance de groupes électrogènes industriels.",
   },
+  //... (omitting unchanging lines for brevity in thought, but tool needs exact content) 
+  // Actually I should split this into two replacements or use multi_replace if I can't match a contiguous block. 
+  // The import is at line 5, usage is at line 60. They are far apart.
+  // I will use multi_replace_file_content for EnergiePage.tsx.
   {
     icon: Sun,
     title: "Énergie Solaire",
@@ -30,14 +34,14 @@ const solutions = [
 const EnergiePage = () => {
   return (
     <Layout>
-      <PageBanner 
-        title="ENERGIE" 
+      <PageBanner
+        title="ENERGIE"
         breadcrumb={[
           { label: "Accueil", href: "/" },
           { label: "Energie" },
-        ]} 
+        ]}
       />
-      
+
       <section className="py-16 lg:py-24">
         <div className="container-main">
           <div className="grid lg:grid-cols-3 gap-12">
@@ -49,15 +53,15 @@ const EnergiePage = () => {
               <h2 className="section-title mb-6">
                 Énergie pour <span className="text-primary">l'Industrie Minière</span>
               </h2>
-              
+
               <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
-                MINEGRA GROUP propose des solutions énergétiques complètes pour les sites miniers 
-                et industriels. De la fourniture de groupes électrogènes aux installations solaires, 
+                MINEGRA GROUP propose des solutions énergétiques complètes pour les sites miniers
+                et industriels. De la fourniture de groupes électrogènes aux installations solaires,
                 nous garantissons une alimentation fiable pour vos opérations.
               </p>
 
-              <img 
-                src={service2} 
+              <img
+                src={groupeElectrogene}
                 alt="Solutions énergétiques"
                 className="w-full h-80 object-cover mb-12"
               />
@@ -96,7 +100,7 @@ const EnergiePage = () => {
                 <ArrowRight className="w-4 h-4" />
               </a>
             </div>
-            
+
             <Sidebar />
           </div>
         </div>

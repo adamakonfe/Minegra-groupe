@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import PageBanner from "@/components/PageBanner";
 import Sidebar from "@/components/Sidebar";
 import { ArrowRight, CheckCircle, Truck, Package, Clock, Shield } from "lucide-react";
-import heroTruck from "@/assets/hero-truck.jpg";
+import heroBoat from "@/assets/bateau.jpg";
 
 const features = [
   {
@@ -57,9 +57,9 @@ const LogistiquePage = () => {
               </p>
 
               <img 
-                src={heroTruck} 
+                src={heroBoat} 
                 alt="Logistique minière"
-                className="w-full h-80 object-cover mb-12"
+                className="w-full h-auto mb-12"
               />
 
               <div className="grid sm:grid-cols-2 gap-6 mb-12">

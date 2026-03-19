@@ -5,7 +5,7 @@ import { ScrollAnimation } from "@/hooks/useScrollAnimation";
 import teamMember from "@/assets/team-member.jpg";
 
 const teamMembers = [
-  { name: "Vincent OUEDRAOGO", role: "CEO" },
+  { name: "Karim KONFE", role: "CEO" },
   { name: "Raïcha OUEDRAOGO", role: "Assistante CEO" },
   { name: "Moumouni OUEDRAOGO", role: "Chargé de la Sécurité" },
   { name: "Robert SOME", role: "Comptable" },
@@ -19,7 +19,7 @@ const TeamPage = () => {
   return (
     <Layout>
       <PageBanner title="Notre Équipe" subtitle="MINEGRA GROUP" />
-      
+
       <div className="py-16 bg-background">
         <div className="container-main">
           <ScrollAnimation animation="fade-up">
@@ -55,7 +55,7 @@ const TeamPage = () => {
           </div>
         </div>
       </div>
-      
+
       <ContactBar />
     </Layout>
   );
