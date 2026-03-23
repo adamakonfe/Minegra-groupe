@@ -20,10 +20,14 @@ const ContactPage = () => {
     setIsSubmitting(true);
 
     try {
-      // TODO: Remplace ces identifiants par ceux que tu vas obtenir sur ton compte EmailJS (https://www.emailjs.com/)
-      const serviceId = "VOTRE_SERVICE_ID";
-      const templateId = "VOTRE_TEMPLATE_ID";
-      const publicKey = "VOTRE_PUBLIC_KEY";
+      // Utilisation des variables d'environnement Vite définies dans le fichier .env
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+      if (!serviceId || !templateId || !publicKey || serviceId === "votre_service_id_ici") {
+        throw new Error("Veuillez configurer vos clés EmailJS dans le fichier .env");
+      }
 
       const templateParams = {
         from_name: formData.name,
@@ -92,8 +96,8 @@ const ContactPage = () => {
                     </div>
                     <div>
                       <span className="text-primary text-sm block">Nous Écrire</span>
-                      <a href="mailto:contact@minegragroup.com" className="font-semibold text-lg hover:text-primary transition-colors">
-                        info@Minegragroup.com
+                      <a href="mailto:info@minegragroup.com" className="font-semibold text-lg hover:text-primary transition-colors">
+                        info@minegragroup.com
                       </a>
                     </div>
                   </div>

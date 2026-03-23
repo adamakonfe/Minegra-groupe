@@ -25,7 +25,7 @@ const testimonials = [
     role: "Ingénieur Principal",
     company: "African Minerals Corp",
     image: teamMember,
-    quote: "Nous travaillons avec MINEGRA GROUP depuis 5 ans. Leur fiabilité et leur expertise technique font d'eux un partenaire de confiance pour tous nos projets de forage.",
+    quote: "Nous travaillons avec MINEGRA GROUP depuis 3 ans. Leur fiabilité et leur expertise technique font d'eux un partenaire de confiance pour tous nos projets de forage.",
   },
 ];
 

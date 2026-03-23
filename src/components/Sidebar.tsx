@@ -79,7 +79,7 @@ const Sidebar = () => {
             </div>
             <div>
               <p className="text-xs uppercase font-bold text-black/60">Email</p>
-              <a href="mailto:contact@minegragroup.com" className="font-bold text-sm hover:underline">contact@minegragroup.com</a>
+              <a href="mailto:info@minegragroup.com" className="font-bold text-sm hover:underline">info@minegragroup.com</a>
             </div>
           </div>
         </div>

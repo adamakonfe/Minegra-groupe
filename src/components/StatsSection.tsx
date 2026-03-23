@@ -4,17 +4,17 @@ import { Calendar, Users, Award, Globe, Truck, HardHat } from "lucide-react";
 const stats = [
   {
     icon: Calendar,
-    value: 5,
+    value: 3,
     suffix: "+",
     label: "Années d'Expérience",
     description: "D'expertise dans le secteur minier",
   },
   {
     icon: Award,
-    value: 250,
+    value: 100,
     suffix: "+",
     label: "Projets Réalisés",
-    description: "Partout en Afrique Centrale",
+    description: "Partout en Afrique de l'Ouest",
   },
   {
     icon: Users,
@@ -25,7 +25,7 @@ const stats = [
   },
   {
     icon: HardHat,
-    value: 500,
+    value: 50,
     suffix: "+",
     label: "Employés Qualifiés",
     description: "Experts dans leur domaine",
@@ -39,7 +39,7 @@ const stats = [
   },
   {
     icon: Truck,
-    value: 150,
+    value: 50,
     suffix: "+",
     label: "Équipements",
     description: "Flotte moderne et performante",
@@ -126,7 +126,7 @@ const StatsSection = () => {
           </h2>
           <div className="w-24 h-1 bg-primary mx-auto mb-6" />
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            Depuis plus de 5 ans, MINEGRA GROUP s'engage à fournir des services de qualité exceptionnelle dans le secteur minier africain.
+            Depuis plus de 3 ans, MINEGRA GROUP s'engage à fournir des services de qualité exceptionnelle dans le secteur minier africain.
           </p>
         </div>
 

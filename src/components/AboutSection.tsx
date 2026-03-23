@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Phone, ArrowRight } from "lucide-react";
-import ceoPortrait from "@/assets/ceo-portrait.jpg";
+import ceoPortrait from "@/assets/karim.jpeg";
 import miningVideo from "@/assets/Transport de Minerais.mp4";
 import { ScrollAnimation } from "@/hooks/useScrollAnimation";
 
@@ -66,10 +66,10 @@ const AboutSection = () => {
                   <img
                     src={ceoPortrait}
                     alt="CEO"
-                    className="w-20 h-20 rounded-full object-cover border-4 border-primary shadow-lg"
+                    className="w-32 h-32 rounded-full object-cover object-top border-4 border-primary shadow-lg"
                   />
-                  <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-primary rounded-full flex items-center justify-center">
-                    <span className="text-primary-foreground text-xs font-bold">CEO</span>
+                  <div className="absolute -bottom-2 -right-4 px-3 py-1 bg-primary rounded-full flex items-center justify-center shadow-md border-2 border-white">
+                    <span className="text-primary-foreground text-xs font-bold">Gérant</span>
                   </div>
                 </div>
                 <div>

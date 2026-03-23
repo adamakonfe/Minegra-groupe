@@ -16,11 +16,11 @@ const TopBar = () => {
                         </a>
 
                         {/* Email */}
-                        <a href="mailto:info@Minegragroup.com" className="flex items-center gap-3 group">
+                        <a href="mailto:info@minegragroup.com" className="flex items-center gap-3 group">
                             <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center transition-all duration-300 group-hover:scale-110">
                                 <Mail className="w-5 h-5 text-black" />
                             </div>
-                            <span className="hidden md:inline text-sm font-medium text-white">info@Minegragroup.com</span>
+                            <span className="hidden md:inline text-sm font-medium text-white">info@minegragroup.com</span>
                         </a>
 
                         {/* Location */}

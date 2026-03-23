@@ -78,7 +78,7 @@ const MinePage = () => {
               <h3 className="font-heading font-bold text-2xl mb-4">Pourquoi Nous Choisir</h3>
               <ul className="space-y-3 mb-8">
                 {[
-                  "Expertise de plus de 5 ans dans le secteur minier",
+                  "Expertise de plus de 3 ans dans le secteur minier",
                   "Flotte d'équipements modernes et bien entretenus",
                   "Respect strict des normes environnementales",
                   "Équipe de professionnels certifiés",

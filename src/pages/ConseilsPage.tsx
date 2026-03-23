@@ -76,7 +76,7 @@ const ConseilsPage = () => {
                       en partageant notre expertise et nos meilleures pratiques du secteur minier."
                     </blockquote>
                     <p className="font-heading font-bold">Vincent K. OUEDRAOGO</p>
-                    <p className="text-primary text-sm">Directeur Général</p>
+
                   </div>
                 </div>
               </ScrollAnimation>
