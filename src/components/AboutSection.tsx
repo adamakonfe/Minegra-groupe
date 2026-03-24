@@ -60,23 +60,7 @@ const AboutSection = () => {
                 Avec des décennies d'expérience en Afrique de l'Ouest, nous offrons l'excellence à chaque étape.
               </p>
 
-              {/* CEO Info Card */}
-              <div className="flex items-center gap-6 mb-10 p-5 bg-muted hover-lift cursor-pointer">
-                <div className="relative">
-                  <img
-                    src={ceoPortrait}
-                    alt="CEO"
-                    className="w-32 h-32 rounded-full object-cover object-top border-4 border-primary shadow-lg"
-                  />
-                  <div className="absolute -bottom-2 -right-4 px-3 py-1 bg-primary rounded-full flex items-center justify-center shadow-md border-2 border-white">
-                    <span className="text-primary-foreground text-xs font-bold">Gérant</span>
-                  </div>
-                </div>
-                <div>
-                  <h4 className="font-heading font-bold text-xl text-foreground">Karim KONFE</h4>
-                  <span className="text-primary text-sm uppercase tracking-wider font-semibold">MINEGRA GROUP</span>
-                </div>
-              </div>
+
 
               {/* Contact & CTA */}
               <div className="flex flex-wrap items-center gap-8">
