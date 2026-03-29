@@ -49,7 +49,7 @@ const Footer = () => {
                                 </div>
                                 <div>
                                     <p className="text-black/70 text-sm">Localisation</p>
-                                    <span className="text-black font-semibold text-lg">Bargo - Ouaga</span>
+                                    <span className="text-black font-semibold text-lg">Dassasgho - Ouaga</span>
                                 </div>
                             </div>
                         </div>

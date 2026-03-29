@@ -28,7 +28,7 @@ const TopBar = () => {
                             <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
                                 <MapPin className="w-5 h-5 text-black" />
                             </div>
-                            <span className="text-sm font-medium text-white">Bargo - Ouaga</span>
+                            <span className="text-sm font-medium text-white">Dassasgho - Ouaga</span>
                         </div>
                     </div>
 

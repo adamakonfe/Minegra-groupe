@@ -72,10 +72,19 @@ const ConseilsPage = () => {
                   />
                   <div>
                     <blockquote className="text-lg italic mb-4">
-                      "Notre engagement est d'accompagner nos clients vers l'excellence opérationnelle,
-                      en partageant notre expertise et nos meilleures pratiques du secteur minier."
+                      " Chez MINEGRA GROUP, nous avons une vision claire : être le partenaire terrain des entreprises qui opèrent dans des environnements exigeants.
+                      <br />
+                      Nous garantissons :
+                      <br />
+                      Fiabilité
+                      <br />
+                      Performance
+                      <br />
+                      Réactivité
+                      <br />
+                      Solutions adaptées à chaque besoin"
                     </blockquote>
-                    <p className="font-heading font-bold">Vincent K. OUEDRAOGO</p>
+                    <p className="font-heading font-bold">KARIM KONFE</p>
 
                   </div>
                 </div>
